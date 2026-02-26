@@ -1,0 +1,11 @@
+Put your image files in THIS folder (the same folder as index.html):
+
+1. HEADER LOGO (top-left corner)
+   - File name: logo.jpeg  OR  logo.jpg
+   - This is your "COLE MADE THAT" logo.
+
+2. HERO IMAGE (right side of the main home screen)
+   - File name: hero-image.jpeg  OR  hero-image.jpg
+   - Use a photo of your labels, prints, or product so the home screen pops.
+
+After adding the files, refresh your browser. If you open index.html by double-clicking it (file://), some browsers may not load local images; try opening the folder in Cursor and using "Open with Live Server" or upload the site to Netlify and view it there.
