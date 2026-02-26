@@ -116,11 +116,59 @@ body {
   background: rgba(47, 33, 21, 0.06);
 }
 
+/* Hamburger button — hidden on desktop, shown on mobile */
+.nav-menu-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+.nav-menu-btn::before,
+.nav-menu-btn::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: var(--text-main);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-menu-btn::before {
+  top: 14px;
+}
+.nav-menu-btn::after {
+  bottom: 14px;
+}
+.nav-menu-btn .nav-menu-btn-line {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 50%;
+  margin-top: -1px;
+  height: 2px;
+  background: var(--text-main);
+  transition: opacity 0.2s ease;
+}
+.nav-menu-btn[aria-expanded="true"]::before {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-menu-btn[aria-expanded="true"]::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.nav-menu-btn[aria-expanded="true"] .nav-menu-btn-line {
+  opacity: 0;
+}
+
 /* Hero */
 
 .hero {
   position: relative;
-  min-height: 58vh;
+  min-height: min(58vh, 720px);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -157,7 +205,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 64px 0 300px;
+  padding: 64px 0 clamp(260px, 28vh, 420px);
 }
 
 .hero-inner {
@@ -393,7 +441,7 @@ body {
 .section-about {
   background: linear-gradient(180deg, #0f2340 0%, #050816 100%);
   color: #ffffff;
-  padding-bottom: 120px;
+  padding-bottom: clamp(120px, 14vh, 240px);
 }
 
 .section-about h2 {
@@ -424,7 +472,7 @@ body {
   background: #ffffff;
   color: var(--text-main);
   padding-top: 160px;
-  padding-bottom: 240px;
+  padding-bottom: clamp(240px, 22vh, 400px);
 }
 
 .section-print h2 {
@@ -458,7 +506,7 @@ body {
 .section-quote {
   background: linear-gradient(180deg, #0f2340 0%, #050816 100%);
   color: #ffffff;
-  padding-bottom: 160px;
+  padding-bottom: clamp(160px, 18vh, 320px);
 }
 
 .section-clients {
@@ -860,51 +908,53 @@ textarea {
 }
 
 @media (max-width: 720px) {
-  /* Slim header: one row, nav scrolls horizontally so it doesn't double in height */
+  /* Mobile: hamburger menu so all links are visible and page scroll works */
+  .nav-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .header-inner {
-    padding: 8px 12px;
-    gap: 8px;
-    flex-wrap: nowrap;
-  }
-
-  .logo-image {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logo-text {
-    font-size: 14px;
+    padding: 10px 12px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .main-nav {
-    flex: 1;
-    min-width: 0;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    gap: 4px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 4px 0;
+    flex-basis: 100%;
+    order: 3;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+    padding: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 
-  .main-nav::-webkit-scrollbar {
-    display: none;
+  .site-header.nav-open .main-nav {
+    max-height: 320px;
+    opacity: 1;
   }
 
   .main-nav a {
-    flex-shrink: 0;
-    font-size: 11px;
-    padding: 5px 6px;
-    min-height: 34px;
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
+    display: block;
+    padding: 14px 12px;
+    font-size: 15px;
+    min-height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
 
-  /* When you tap a nav link, section scrolls up so it sits below the header (not under it) */
+  .main-nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* When you tap a nav link, section scrolls below the header */
   html {
-    scroll-padding-top: 80px;
+    scroll-padding-top: 60px;
   }
 
   #hero,
@@ -913,19 +963,19 @@ textarea {
   #samples,
   #about,
   #contact {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 60px;
   }
 
-  /* Hero on mobile: bigger green area, kicker visible, room before white section */
+  /* Hero on mobile: full-height green area so homepage feels big enough */
   .hero {
-    min-height: 78vh;
+    min-height: 92vh;
     align-items: flex-start;
     padding-top: 0;
   }
 
   .hero-content {
-    padding-top: 64px;
-    padding-bottom: 200px;
+    padding-top: 72px;
+    padding-bottom: clamp(180px, 25vh, 280px);
     width: 100%;
   }
 

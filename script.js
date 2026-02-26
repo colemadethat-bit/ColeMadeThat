@@ -1,4 +1,16 @@
-// ====== Smooth scroll for in-page links ======
+// ====== Mobile nav menu toggle ======
+const navMenuBtn = document.querySelector('.nav-menu-btn');
+const siteHeader = document.querySelector('.site-header');
+
+if (navMenuBtn && siteHeader) {
+  navMenuBtn.addEventListener('click', () => {
+    const open = siteHeader.classList.toggle('nav-open');
+    navMenuBtn.setAttribute('aria-expanded', open);
+    navMenuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+}
+
+// ====== Smooth scroll for in-page links (and close mobile menu after tap) ======
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   const href = a.getAttribute('href');
   if (href === '#') return;
@@ -7,6 +19,15 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     if (el) {
       e.preventDefault();
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const header = document.querySelector('.site-header');
+      const btn = document.querySelector('.nav-menu-btn');
+      if (header && header.classList.contains('nav-open')) {
+        header.classList.remove('nav-open');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+        }
+      }
     }
   });
 });
