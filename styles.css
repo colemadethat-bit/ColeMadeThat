@@ -894,17 +894,17 @@ textarea {
 
   .main-nav a {
     flex-shrink: 0;
-    font-size: 12px;
-    padding: 6px 8px;
-    min-height: 36px;
+    font-size: 11px;
+    padding: 5px 6px;
+    min-height: 34px;
     display: inline-flex;
     align-items: center;
     white-space: nowrap;
   }
 
-  /* When you tap a nav link, content scrolls into view below the header (not under it) */
+  /* When you tap a nav link, section scrolls up so it sits below the header (not under it) */
   html {
-    scroll-padding-top: 56px;
+    scroll-padding-top: 80px;
   }
 
   #hero,
@@ -913,19 +913,19 @@ textarea {
   #samples,
   #about,
   #contact {
-    scroll-margin-top: 56px;
+    scroll-margin-top: 80px;
   }
 
-  /* Hero: more room so you see the full message, not just the bottom */
+  /* Hero on mobile: bigger green area, kicker visible, room before white section */
   .hero {
-    min-height: 0;
+    min-height: 78vh;
     align-items: flex-start;
     padding-top: 0;
   }
 
   .hero-content {
-    padding-top: 56px;
-    padding-bottom: 120px;
+    padding-top: 64px;
+    padding-bottom: 200px;
     width: 100%;
   }
 
@@ -938,17 +938,19 @@ textarea {
   }
 
   .hero-kicker {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
   }
 
   .hero h1 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     font-size: clamp(22px, 5.5vw, 28px);
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   .hero-subtitle {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     font-size: 14px;
   }
 
@@ -986,7 +988,7 @@ textarea {
   }
 
   .section-print {
-    padding-top: 80px;
+    padding-top: 64px;
     padding-bottom: 160px;
   }
 
