@@ -898,10 +898,10 @@ textarea {
   text-decoration: none;
 }
 
-/* Large desktop: hero/services/quote get more padding; About Me less so Contact stays visible; slightly larger text */
+/* Large desktop: hero gets more padding (no Services peek); About Me shorter so Contact is visible */
 @media (min-height: 750px) and (min-width: 1024px) {
   .hero-content {
-    padding-bottom: 55vh;
+    padding-bottom: 62vh;
   }
   .section-print {
     padding-bottom: 46vh;
@@ -910,7 +910,7 @@ textarea {
     padding-bottom: 44vh;
   }
   .section-about {
-    padding-bottom: 26vh;
+    padding-bottom: 20vh;
   }
 }
 
@@ -1012,8 +1012,8 @@ textarea {
   }
 
   .hero-content {
-    padding-top: 260px;
-    padding-bottom: 520px;
+    padding-top: 320px;
+    padding-bottom: 580px;
     width: 100%;
   }
 
@@ -1077,19 +1077,19 @@ textarea {
 
   .section-print {
     padding-top: 64px;
-    padding-bottom: 260px;
+    padding-bottom: 300px;
   }
 
   .section-quote {
-    padding-bottom: 260px;
+    padding-bottom: 300px;
   }
 
   .section-samples {
-    padding-bottom: 240px;
+    padding-bottom: 280px;
   }
 
   .section-about {
-    padding-bottom: 220px;
+    padding-bottom: 260px;
   }
 
   .product-grid {
