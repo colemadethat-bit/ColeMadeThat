@@ -898,19 +898,34 @@ textarea {
   text-decoration: none;
 }
 
-/* Large desktop: extra padding so next section never peeks (Samples is reference; others match) */
+/* Large desktop: hero/services/quote get more padding; About Me less so Contact stays visible; slightly larger text */
 @media (min-height: 750px) and (min-width: 1024px) {
   .hero-content {
-    padding-bottom: 48vh;
+    padding-bottom: 55vh;
   }
   .section-print {
-    padding-bottom: 44vh;
+    padding-bottom: 46vh;
   }
   .section-quote {
-    padding-bottom: 42vh;
+    padding-bottom: 44vh;
   }
   .section-about {
-    padding-bottom: 40vh;
+    padding-bottom: 26vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+  .container {
+    max-width: 1200px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 4vw, 52px);
+  }
+  .section h2 {
+    font-size: 30px;
   }
 }
 
@@ -988,7 +1003,7 @@ textarea {
     scroll-margin-top: 60px;
   }
 
-  /* Hero on mobile: content pulled DOWN so "Labels, stickers…" is first thing visible, then headline, then rest */
+  /* Hero on mobile: pull content way down so "Labels, stickers…" is first line visible; big bottom so Services doesn’t peek */
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
@@ -997,8 +1012,8 @@ textarea {
   }
 
   .hero-content {
-    padding-top: 180px;
-    padding-bottom: 420px;
+    padding-top: 260px;
+    padding-bottom: 520px;
     width: 100%;
   }
 
@@ -1062,15 +1077,19 @@ textarea {
 
   .section-print {
     padding-top: 64px;
-    padding-bottom: 220px;
+    padding-bottom: 260px;
   }
 
   .section-quote {
-    padding-bottom: 200px;
+    padding-bottom: 260px;
+  }
+
+  .section-samples {
+    padding-bottom: 240px;
   }
 
   .section-about {
-    padding-bottom: 180px;
+    padding-bottom: 220px;
   }
 
   .product-grid {
