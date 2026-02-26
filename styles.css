@@ -1020,10 +1020,10 @@ textarea {
     scroll-margin-top: 60px;
   }
 
-  /* Hero on mobile: spacer + padding pull content down so "Labels, stickers…" is first line visible */
+  /* Hero on mobile: spacer pulls content down so "Labels, stickers…" is first line; not too low */
   .hero-mobile-spacer {
     display: block;
-    min-height: 320px;
+    min-height: 160px;
     width: 100%;
   }
 
@@ -1035,7 +1035,7 @@ textarea {
   }
 
   .hero-content {
-    padding-top: 100px;
+    padding-top: 88px;
     padding-bottom: 600px;
     width: 100%;
   }
