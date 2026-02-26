@@ -205,7 +205,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 64px 0 clamp(260px, 28vh, 420px);
+  padding: 64px 0 clamp(280px, 32vh, 480px);
 }
 
 .hero-inner {
@@ -441,7 +441,7 @@ body {
 .section-about {
   background: linear-gradient(180deg, #0f2340 0%, #050816 100%);
   color: #ffffff;
-  padding-bottom: clamp(120px, 14vh, 240px);
+  padding-bottom: clamp(140px, 18vh, 320px);
 }
 
 .section-about h2 {
@@ -472,7 +472,7 @@ body {
   background: #ffffff;
   color: var(--text-main);
   padding-top: 160px;
-  padding-bottom: clamp(240px, 22vh, 400px);
+  padding-bottom: clamp(260px, 26vh, 480px);
 }
 
 .section-print h2 {
@@ -506,7 +506,7 @@ body {
 .section-quote {
   background: linear-gradient(180deg, #0f2340 0%, #050816 100%);
   color: #ffffff;
-  padding-bottom: clamp(160px, 18vh, 320px);
+  padding-bottom: clamp(180px, 22vh, 400px);
 }
 
 .section-clients {
@@ -898,6 +898,22 @@ textarea {
   text-decoration: none;
 }
 
+/* Large desktop: extra padding so next section never peeks (laptop is fine; big monitor gets more) */
+@media (min-height: 750px) and (min-width: 1024px) {
+  .hero-content {
+    padding-bottom: 42vh;
+  }
+  .section-print {
+    padding-bottom: 38vh;
+  }
+  .section-quote {
+    padding-bottom: 35vh;
+  }
+  .section-about {
+    padding-bottom: 32vh;
+  }
+}
+
 /* Responsive */
 
 @media (max-width: 900px) {
@@ -966,16 +982,17 @@ textarea {
     scroll-margin-top: 60px;
   }
 
-  /* Hero on mobile: full-height green area so homepage feels big enough */
+  /* Hero on mobile: full first screen, content pulled down so kicker + all text visible, no white peeking */
   .hero {
-    min-height: 92vh;
+    min-height: 100vh;
+    min-height: 100dvh;
     align-items: flex-start;
     padding-top: 0;
   }
 
   .hero-content {
-    padding-top: 72px;
-    padding-bottom: clamp(180px, 25vh, 280px);
+    padding-top: 96px;
+    padding-bottom: 380px;
     width: 100%;
   }
 
@@ -1039,7 +1056,15 @@ textarea {
 
   .section-print {
     padding-top: 64px;
-    padding-bottom: 160px;
+    padding-bottom: 220px;
+  }
+
+  .section-quote {
+    padding-bottom: 200px;
+  }
+
+  .section-about {
+    padding-bottom: 180px;
   }
 
   .product-grid {
