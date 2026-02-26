@@ -205,7 +205,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 64px 0 clamp(280px, 32vh, 480px);
+  padding: 96px 0 clamp(280px, 32vh, 480px);
 }
 
 .hero-inner {
@@ -911,6 +911,19 @@ textarea {
   }
   .section-about {
     padding-bottom: 20vh;
+  }
+}
+
+/* Desktop: hero content starts at top so "Labels, stickers…" is first visible, not centered */
+@media (min-width: 901px) {
+  .hero {
+    align-items: flex-start;
+  }
+  .hero-content {
+    padding-top: 100px;
+  }
+  .hero-inner {
+    align-items: flex-start;
   }
 }
 
