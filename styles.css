@@ -208,6 +208,10 @@ body {
   padding: 96px 0 clamp(280px, 32vh, 480px);
 }
 
+.hero-mobile-spacer {
+  display: none;
+}
+
 .hero-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.05fr);
@@ -957,7 +961,7 @@ textarea {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   /* Mobile: hamburger menu so all links are visible and page scroll works */
   .nav-menu-btn {
     display: flex !important;
@@ -1016,7 +1020,13 @@ textarea {
     scroll-margin-top: 60px;
   }
 
-  /* Hero on mobile: pull content way down so "Labels, stickers…" is first line visible; big bottom so Services doesn’t peek */
+  /* Hero on mobile: spacer + padding pull content down so "Labels, stickers…" is first line visible */
+  .hero-mobile-spacer {
+    display: block;
+    min-height: 320px;
+    width: 100%;
+  }
+
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
@@ -1025,8 +1035,8 @@ textarea {
   }
 
   .hero-content {
-    padding-top: 320px;
-    padding-bottom: 580px;
+    padding-top: 100px;
+    padding-bottom: 600px;
     width: 100%;
   }
 
