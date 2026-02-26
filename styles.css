@@ -116,7 +116,7 @@ body {
   background: rgba(47, 33, 21, 0.06);
 }
 
-/* Hamburger button — hidden on desktop, shown on mobile */
+/* Hamburger button — only on mobile; never show on desktop */
 .nav-menu-btn {
   display: none;
   width: 44px;
@@ -898,23 +898,29 @@ textarea {
   text-decoration: none;
 }
 
-/* Large desktop: extra padding so next section never peeks (laptop is fine; big monitor gets more) */
+/* Large desktop: extra padding so next section never peeks (Samples is reference; others match) */
 @media (min-height: 750px) and (min-width: 1024px) {
   .hero-content {
-    padding-bottom: 42vh;
+    padding-bottom: 48vh;
   }
   .section-print {
-    padding-bottom: 38vh;
+    padding-bottom: 44vh;
   }
   .section-quote {
-    padding-bottom: 35vh;
+    padding-bottom: 42vh;
   }
   .section-about {
-    padding-bottom: 32vh;
+    padding-bottom: 40vh;
   }
 }
 
 /* Responsive */
+
+@media (min-width: 721px) {
+  .nav-menu-btn {
+    display: none !important;
+  }
+}
 
 @media (max-width: 900px) {
   .labels-layout,
@@ -926,7 +932,7 @@ textarea {
 @media (max-width: 720px) {
   /* Mobile: hamburger menu so all links are visible and page scroll works */
   .nav-menu-btn {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
   }
@@ -982,7 +988,7 @@ textarea {
     scroll-margin-top: 60px;
   }
 
-  /* Hero on mobile: full first screen, content pulled down so kicker + all text visible, no white peeking */
+  /* Hero on mobile: content pulled DOWN so "Labels, stickers…" is first thing visible, then headline, then rest */
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
@@ -991,8 +997,8 @@ textarea {
   }
 
   .hero-content {
-    padding-top: 96px;
-    padding-bottom: 380px;
+    padding-top: 180px;
+    padding-bottom: 420px;
     width: 100%;
   }
 
