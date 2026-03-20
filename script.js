@@ -11,6 +11,16 @@ if (navMenuBtn && siteHeader) {
 }
 
 // ====== Smooth scroll for in-page links (and close mobile menu after tap) ======
+function scrollToSection(el) {
+  const header = document.querySelector('.site-header');
+  const headerHeight = header ? header.offsetHeight : 64;
+  const isMobile = window.matchMedia('(max-width: 900px)').matches;
+  // Bigger top gap on phones so previous section never peeks through.
+  const extraGap = isMobile ? 72 : 20;
+  const top = window.scrollY + el.getBoundingClientRect().top - headerHeight - extraGap;
+  window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+}
+
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   const href = a.getAttribute('href');
   if (href === '#') return;
@@ -18,7 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     const el = document.querySelector(href);
     if (el) {
       e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToSection(el);
       const header = document.querySelector('.site-header');
       const btn = document.querySelector('.nav-menu-btn');
       if (header && header.classList.contains('nav-open')) {
@@ -109,7 +119,7 @@ if (productJumpLinks.length && productTypeSelect && quoteSection) {
       e.preventDefault();
       productTypeSelect.value = type;
       showQuoteFieldsFor(type);
-      quoteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToSection(quoteSection);
     });
   });
 }
