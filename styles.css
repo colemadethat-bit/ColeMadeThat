@@ -1051,14 +1051,14 @@ textarea {
   .hero {
     min-height: 108dvh;
     align-items: flex-start;
-    padding-top: 56px; /* keeps hero content below fixed header */
+    padding-top: 64px; /* keeps hero content below fixed header */
   }
 
   .hero-content {
     min-height: calc(108dvh - 56px);
     justify-content: flex-start;
-    padding-top: 28px;
-    padding-bottom: 36px;
+    padding-top: 120px;
+    padding-bottom: 12px;
     width: 100%;
     gap: 20px;
   }
@@ -1121,6 +1121,7 @@ textarea {
     gap: 8px;
     margin-top: 0;
     justify-content: center;
+    margin-bottom: 18px;
   }
 
   .hero-tags span {
@@ -1133,7 +1134,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    margin-top: 14px;
+    margin-top: 24px;
     max-width: none;
     width: 100%;
     padding: 0 4px;
