@@ -79,6 +79,7 @@ body {
   align-items: center;
   gap: 8px;
   color: var(--bg-darker);
+  text-decoration: none;
 }
 
 .logo-image {
