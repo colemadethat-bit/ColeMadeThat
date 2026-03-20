@@ -168,10 +168,10 @@ body {
 
 .hero {
   position: relative;
-  min-height: min(58vh, 720px);
+  min-height: 100vh;
   color: #ffffff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 64px;
   /* Fallback: put the gradient directly on the hero so you 100% see it */
   background: radial-gradient(
@@ -205,22 +205,15 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 96px 0 clamp(280px, 32vh, 480px);
+  min-height: calc(100vh - 64px);
+  padding: 72px 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.hero-mobile-spacer {
-  display: none;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.05fr);
-  gap: 32px;
-  align-items: center;
-}
-
-.hero-text {
-  max-width: 640px;
+.hero-main {
+  max-width: 820px;
 }
 
 .hero-clients-heading {
@@ -228,22 +221,6 @@ body {
   margin: 20px 0 0;
   color: #ffffff;
   font-weight: 600;
-}
-
-.hero-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 440px;
-  height: 320px;
-  border-radius: 32px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  object-fit: cover;
 }
 
 .hero-kicker {
@@ -310,6 +287,39 @@ body {
   padding: 6px 10px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-product-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.hero-product-tile {
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-product-tile img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-product-tile span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 /* Buttons */
@@ -902,32 +912,29 @@ textarea {
   text-decoration: none;
 }
 
-/* Large desktop: hero gets more padding (no Services peek); About Me shorter so Contact is visible */
+/* Large desktop */
 @media (min-height: 750px) and (min-width: 1024px) {
   .hero-content {
-    padding-bottom: 62vh;
+    padding-bottom: 44px;
   }
   .section-print {
-    padding-bottom: 46vh;
+    padding-bottom: 220px;
   }
   .section-quote {
-    padding-bottom: 44vh;
+    padding-bottom: 220px;
   }
   .section-about {
-    padding-bottom: 20vh;
+    padding-bottom: 180px;
   }
 }
 
-/* Desktop: hero content starts at top so "Labels, stickers…" is first visible, not centered */
+/* Desktop: keep hero content at the top */
 @media (min-width: 901px) {
   .hero {
     align-items: flex-start;
   }
   .hero-content {
-    padding-top: 100px;
-  }
-  .hero-inner {
-    align-items: flex-start;
+    padding-top: 96px;
   }
 }
 
@@ -1020,32 +1027,17 @@ textarea {
     scroll-margin-top: 60px;
   }
 
-  /* Hero on mobile: spacer pulls content down so "Labels, stickers…" is first line; not too low */
-  .hero-mobile-spacer {
-    display: block;
-    min-height: 160px;
-    width: 100%;
-  }
-
   .hero {
-    min-height: 100vh;
     min-height: 100dvh;
     align-items: flex-start;
     padding-top: 0;
   }
 
   .hero-content {
-    padding-top: 88px;
-    padding-bottom: 600px;
+    min-height: calc(100dvh - 56px);
+    padding-top: 74px;
+    padding-bottom: 22px;
     width: 100%;
-  }
-
-  .hero-inner {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hero-text {
-    max-width: none;
   }
 
   .hero-kicker {
@@ -1086,8 +1078,20 @@ textarea {
     font-size: 12px;
   }
 
-  .hero-image {
-    display: none;
+  .hero-product-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .hero-product-tile span {
+    font-size: 11px;
+  }
+
+  .hero-product-tile:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 220px;
+    justify-self: center;
   }
 
   .form-row {
@@ -1098,22 +1102,10 @@ textarea {
     padding: 48px 0;
   }
 
-  .section-print {
-    padding-top: 64px;
-    padding-bottom: 300px;
-  }
-
-  .section-quote {
-    padding-bottom: 300px;
-  }
-
-  .section-samples {
-    padding-bottom: 280px;
-  }
-
-  .section-about {
-    padding-bottom: 260px;
-  }
+  .section-print { padding-top: 64px; padding-bottom: 140px; }
+  .section-quote { padding-bottom: 140px; }
+  .section-samples { padding-bottom: 140px; }
+  .section-about { padding-bottom: 120px; }
 
   .product-grid {
     gap: 20px;

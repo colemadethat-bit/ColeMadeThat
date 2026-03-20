@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Custom labels for honey, hot sauce, and consumable brands in Bucks County, Pennsylvania. Small-batch labels, stickers, banners, and packaging for farms and small brands. Fast turnaround, hands-on service." />
   <meta name="keywords" content="custom labels Bucks County, honey labels, hot sauce labels, consumable brands, small batch labels, Pennsylvania, farm labels, food labels, sticker printing, packaging design" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -35,31 +35,44 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <div class="hero-mobile-spacer" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-text">
-          <p class="hero-kicker">Labels · Stickers · Banners · Packaging · Design & more</p>
-          <h1>Premium custom printing for growing businesses.</h1>
-          <p class="hero-subtitle">
-            ColeMadeThat is a small print studio specializing in high-quality custom printing—labels, stickers, banners, packaging, and design. Hands-on service and attention to detail on every run.
-          </p>
-          <div class="hero-actions">
-            <a href="#products" class="btn btn-hero-see">See what we print</a>
-            <a href="#quote" class="btn btn-hero-secondary">Get a custom quote</a>
-            <a href="#samples" class="btn btn-primary">Get free sample pack</a>
-          </div>
-          <div class="hero-tags">
-            <span>Small runs welcome</span>
-            <span>Fast turnaround</span>
-            <span>Hands-on service</span>
-          </div>
-          <!-- Uncomment to show "Who we've worked with" when you have brands to display:
-          <h2 class="hero-clients-heading">Who we've worked with</h2>
-          -->
+      <div class="hero-main">
+        <p class="hero-kicker">Labels · Stickers · Banners · Packaging · Design & more</p>
+        <h1>Premium custom printing for growing businesses.</h1>
+        <p class="hero-subtitle">
+          ColeMadeThat is a small print studio specializing in high-quality custom printing—labels, stickers, banners, packaging, and design. Hands-on service and attention to detail on every run.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-hero-see">See what we print</a>
+          <a href="#quote" class="btn btn-hero-secondary">Get a custom quote</a>
         </div>
-        <div class="hero-image">
-          <img src="hero-image-1.png" alt="" />
+        <div class="hero-tags">
+          <span>Small runs welcome</span>
+          <span>Fast turnaround</span>
+          <span>Hands-on service</span>
         </div>
+      </div>
+
+      <div class="hero-product-strip" aria-label="Quick links by product type">
+        <a href="#quote" class="hero-product-tile" data-product="labels">
+          <img src="hero-labels.png" alt="Labels" onerror="this.style.display='none';" />
+          <span>Labels</span>
+        </a>
+        <a href="#quote" class="hero-product-tile" data-product="stickers">
+          <img src="hero-stickers.png" alt="Stickers" onerror="this.style.display='none';" />
+          <span>Stickers</span>
+        </a>
+        <a href="#quote" class="hero-product-tile" data-product="banners">
+          <img src="hero-banners.png" alt="Banners" onerror="this.style.display='none';" />
+          <span>Banners</span>
+        </a>
+        <a href="#quote" class="hero-product-tile" data-product="packaging">
+          <img src="hero-packaging.png" alt="Packaging" onerror="this.style.display='none';" />
+          <span>Packaging</span>
+        </a>
+        <a href="#quote" class="hero-product-tile" data-product="design">
+          <img src="hero-design.png" alt="Design" onerror="this.style.display='none';" />
+          <span>Design</span>
+        </a>
       </div>
     </div>
   </section>
@@ -105,7 +118,7 @@
             <li>Custom shapes & sizes</li>
             <li>Gloss, matte, clear, metallic</li>
           </ul>
-          <a href="#quote" class="link-button product-cta">Explore labels →</a>
+          <a href="#quote" class="link-button product-cta" data-product="labels">Explore labels →</a>
         </article>
 
         <article class="product-card">
@@ -116,7 +129,7 @@
             <li>Full-color, high resolution</li>
             <li>Custom shapes and sizes</li>
           </ul>
-          <a href="#quote" class="link-button product-cta">Sticker quote →</a>
+          <a href="#quote" class="link-button product-cta" data-product="stickers">Sticker quote →</a>
         </article>
 
         <article class="product-card">
@@ -127,7 +140,7 @@
             <li>Indoor / outdoor materials</li>
             <li>Custom sizes</li>
           </ul>
-          <a href="#quote" class="link-button product-cta">Banner quote →</a>
+          <a href="#quote" class="link-button product-cta" data-product="banners">Banner quote →</a>
         </article>
 
         <article class="product-card">
@@ -138,7 +151,7 @@
             <li>Label systems for jars & tubes</li>
             <li>Coordinated sets for your lineup</li>
           </ul>
-          <a href="#quote" class="link-button product-cta">View packaging & get quote →</a>
+          <a href="#quote" class="link-button product-cta" data-product="packaging">View packaging & get quote →</a>
         </article>
       </div>
     </div>

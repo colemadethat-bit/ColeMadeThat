@@ -68,6 +68,8 @@ const fieldsLabels = document.getElementById('fields-labels');
 const fieldsBanners = document.getElementById('fields-banners');
 const fieldsPackaging = document.getElementById('fields-packaging');
 const fieldsDesign = document.getElementById('fields-design');
+const quoteSection = document.getElementById('quote');
+const productJumpLinks = document.querySelectorAll('a[data-product]');
 
 function showQuoteFieldsFor(type) {
   [fieldsLabels, fieldsBanners, fieldsPackaging, fieldsDesign].forEach((el) => {
@@ -89,6 +91,27 @@ if (productTypeSelect) {
     showQuoteFieldsFor(productTypeSelect.value);
   });
   if (productTypeSelect.value) showQuoteFieldsFor(productTypeSelect.value);
+
+  // Support direct links like ?product=labels#quote
+  const productFromUrl = new URLSearchParams(window.location.search).get('product');
+  const validTypes = new Set(['labels', 'stickers', 'banners', 'packaging', 'design']);
+  if (productFromUrl && validTypes.has(productFromUrl)) {
+    productTypeSelect.value = productFromUrl;
+    showQuoteFieldsFor(productTypeSelect.value);
+  }
+}
+
+if (productJumpLinks.length && productTypeSelect && quoteSection) {
+  productJumpLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const type = link.dataset.product;
+      if (!type) return;
+      e.preventDefault();
+      productTypeSelect.value = type;
+      showQuoteFieldsFor(type);
+      quoteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 }
 
 // ====== Quote form: build email and submit via mailto ======
