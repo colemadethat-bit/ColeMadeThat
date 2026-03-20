@@ -1035,7 +1035,7 @@ textarea {
 
   /* When you tap a nav link, section scrolls below the header */
   html {
-    scroll-padding-top: 64px;
+    scroll-padding-top: 60px;
   }
 
   #hero,
@@ -1044,7 +1044,7 @@ textarea {
   #samples,
   #about,
   #contact {
-    scroll-margin-top: 64px;
+    scroll-margin-top: 60px;
   }
 
   /* ========== MOBILE ONLY: hero layout (separate from desktop) ========== */
@@ -1072,24 +1072,26 @@ textarea {
   }
 
   .hero-kicker {
-    margin-top: -6px;
+    margin-top: -5px;
     margin-bottom: 8px;
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    line-height: 1.35;
+    font-size: 8.6px;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    white-space: nowrap; /* keep "Labels · Stickers · ..." on one line */
   }
 
   .hero h1,
   .hero-title {
     margin: 0 0 8px;
-    font-size: clamp(23px, 6.5vw, 32px);
-    line-height: 1.22;
+    font-size: clamp(26px, 7.2vw, 40px);
+    line-height: 1.16;
+    font-weight: 700;
     text-transform: capitalize;
   }
 
   .hero-subtitle {
     margin-bottom: 12px;
-    font-size: 13.5px;
+    font-size: 14px;
     line-height: 1.45;
     max-width: 100%;
     padding: 0 4px;
