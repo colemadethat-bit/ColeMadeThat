@@ -249,12 +249,14 @@ body {
   background: var(--hero-kicker-green);
 }
 
-.hero h1 {
+.hero h1,
+.hero-title {
   font-size: clamp(30px, 5vw, 44px);
   margin: 0 0 12px;
   letter-spacing: -0.02em;
   color: #ffffff;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .hero-subtitle {
@@ -270,6 +272,7 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 16px;
+  justify-content: center;
 }
 
 .btn-hero-secondary {
@@ -961,7 +964,8 @@ textarea {
   .container {
     max-width: 1200px;
   }
-  .hero h1 {
+  .hero h1,
+  .hero-title {
     font-size: clamp(36px, 4vw, 52px);
   }
   .section h2 {
@@ -1043,80 +1047,111 @@ textarea {
     scroll-margin-top: 60px;
   }
 
+  /* ========== MOBILE ONLY: hero layout (separate from desktop) ========== */
   .hero {
-    min-height: 100dvh;
+    min-height: auto;
     align-items: flex-start;
     padding-top: 0;
   }
 
   .hero-content {
-    min-height: calc(100dvh - 56px);
-    padding-top: 74px;
-    padding-bottom: 22px;
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: 64px;
+    padding-bottom: 28px;
     width: 100%;
-  }
-
-  .hero-kicker {
-    margin-bottom: 10px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-  }
-
-  .hero h1 {
-    margin: 0 0 10px;
-    font-size: clamp(22px, 5.5vw, 28px);
-    line-height: 1.25;
-  }
-
-  .hero-subtitle {
-    margin-bottom: 16px;
-    font-size: 14px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    min-height: 44px;
-    justify-content: center;
-  }
-
-  .hero-tags {
-    gap: 10px;
-    margin-top: 2px;
-  }
-
-  .hero-tags span {
-    font-size: 12px;
+    gap: 18px;
   }
 
   .hero-main {
     max-width: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 0 6px;
   }
 
+  .hero-kicker {
+    margin-bottom: 8px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+  }
+
+  .hero h1,
+  .hero-title {
+    margin: 0 0 8px;
+    font-size: clamp(17px, 4.8vw, 22px);
+    line-height: 1.22;
+    text-transform: capitalize;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.45;
+    max-width: 100%;
+    padding: 0 4px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+  }
+
+  .hero-actions .btn:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 40px;
+    font-size: 11px;
+    padding: 8px 10px;
+    justify-content: center;
+  }
+
+  .hero-tags {
+    gap: 8px;
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  .hero-tags span {
+    font-size: 9px;
+    padding: 5px 8px;
+  }
+
+  /* Only Labels, Stickers, Packaging on mobile — hide Banners & Design */
   .hero-product-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 8px;
     max-width: none;
+    width: 100%;
+    padding: 0 4px;
+  }
+
+  .hero-product-tile:nth-child(3),
+  .hero-product-tile:nth-child(5) {
+    display: none;
   }
 
   .hero-product-tile img {
-    min-height: 140px;
+    min-height: 0;
+    border-radius: 14px;
+    border-width: 1px;
   }
 
   .hero-product-tile span {
-    font-size: 11px;
-  }
-
-  .hero-product-tile:nth-child(5) {
-    grid-column: 1 / -1;
-    max-width: 220px;
-    justify-self: center;
+    font-size: 10px;
   }
 
   .form-row {
@@ -1151,8 +1186,9 @@ textarea {
     font-size: 15px;
   }
 
-  .hero h1 {
-    font-size: clamp(24px, 6vw, 32px);
+  .hero h1,
+  .hero-title {
+    font-size: clamp(16px, 4.6vw, 20px);
   }
 
   .btn {
