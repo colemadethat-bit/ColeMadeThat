@@ -1035,7 +1035,7 @@ textarea {
 
   /* When you tap a nav link, section scrolls below the header */
   html {
-    scroll-padding-top: 60px;
+    scroll-padding-top: 80px;
   }
 
   #hero,
@@ -1044,7 +1044,7 @@ textarea {
   #samples,
   #about,
   #contact {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 80px;
   }
 
   /* ========== MOBILE ONLY: hero layout (separate from desktop) ========== */
@@ -1069,6 +1069,9 @@ textarea {
     text-align: center;
     align-items: center;
     padding: 0 6px;
+    /* Move only the main text block up.
+       Keep the product tiles' position stable below (labels/stickers/packaging). */
+    transform: translateY(clamp(-160px, -14vh, -110px));
   }
 
   .hero-kicker {
