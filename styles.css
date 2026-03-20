@@ -1072,8 +1072,9 @@ textarea {
   }
 
   .hero-kicker {
-    margin-bottom: 8px;
-    font-size: 9px;
+    margin-top: -10px;
+    margin-bottom: 6px;
+    font-size: 10px;
     letter-spacing: 0.1em;
     line-height: 1.35;
   }
@@ -1081,14 +1082,14 @@ textarea {
   .hero h1,
   .hero-title {
     margin: 0 0 8px;
-    font-size: clamp(17px, 4.8vw, 22px);
-    line-height: 1.22;
+    font-size: clamp(22px, 6.2vw, 30px);
+    line-height: 1.18;
     text-transform: capitalize;
   }
 
   .hero-subtitle {
     margin-bottom: 12px;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.45;
     max-width: 100%;
     padding: 0 4px;
