@@ -1,11 +1,20 @@
 Put your image files in THIS folder (the same folder as index.html):
 
-1. HEADER LOGO (top-left corner)
+1. HEADER LOGO + BROWSER TAB ICON (favicon)
    - File name: logo.jpeg  OR  logo.jpg
-   - This is your "COLE MADE THAT" logo.
+   - Used in the top-left header and as the small icon in the browser tab.
+   - Square-ish logos look best for the tab icon (you can crop a 512x512 PNG later as favicon.ico if you want).
 
-2. HERO IMAGE (right side of the main home screen)
-   - File name: hero-image.jpeg  OR  hero-image.jpg
-   - Use a photo of your labels, prints, or product so the home screen pops.
+2. HERO PRODUCT TILES (five square images on the home page)
+   Put these exact file names in this folder (PNG recommended):
+   - hero-labels.png
+   - hero-stickers.png
+   - hero-banners.png
+   - hero-packaging.png
+   - hero-design.png
+   Each tile is square on the site. Use at least ~600x600 px (or larger) so they stay sharp.
 
-After adding the files, refresh your browser. If you open index.html by double-clicking it (file://), some browsers may not load local images; try opening the folder in Cursor and using "Open with Live Server" or upload the site to Netlify and view it there.
+3. OLD HERO SIDE IMAGE (optional / legacy)
+   - hero-image-1.png — no longer used in the current layout; you can delete it from the folder if you want.
+
+After adding files, push to GitHub and refresh the live site (or hard refresh). If images are missing, the tile labels (Labels, Stickers, etc.) still show.
