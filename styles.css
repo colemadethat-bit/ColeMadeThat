@@ -1055,9 +1055,9 @@ textarea {
   }
 
   .hero-content {
-    min-height: calc(108dvh - 56px);
+    min-height: calc(108dvh - 64px);
     justify-content: flex-start;
-    padding-top: 120px;
+    padding-top: max(200px, 22vh);
     padding-bottom: 12px;
     width: 100%;
     gap: 20px;
@@ -1094,9 +1094,11 @@ textarea {
     padding: 0 4px;
   }
 
+  /* Row 1: See what we print | Get free sample pack — Row 2: Get a custom quote (full width) */
   .hero-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 8px;
     width: 100%;
     max-width: 360px;
@@ -1105,8 +1107,19 @@ textarea {
     margin-bottom: 12px;
   }
 
-  .hero-actions .btn:nth-child(3) {
+  .hero-actions .btn:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero-actions .btn:nth-child(2) {
     grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .hero-actions .btn:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .hero-actions .btn {
@@ -1121,7 +1134,7 @@ textarea {
     gap: 8px;
     margin-top: 0;
     justify-content: center;
-    margin-bottom: 18px;
+    margin-bottom: 32px;
   }
 
   .hero-tags span {
@@ -1134,7 +1147,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    margin-top: 24px;
+    margin-top: 28px;
     max-width: none;
     width: 100%;
     padding: 0 4px;
