@@ -1234,7 +1234,9 @@ textarea {
 
   .hero h1,
   .hero-title {
-    font-size: clamp(16px, 4.6vw, 20px);
+    font-size: clamp(30px, 8.8vw, 44px);
+    line-height: 1.12;
+    font-weight: 700;
   }
 
   .btn {
