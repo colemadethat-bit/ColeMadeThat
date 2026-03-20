@@ -1049,15 +1049,15 @@ textarea {
 
   /* ========== MOBILE ONLY: hero layout (separate from desktop) ========== */
   .hero {
-    min-height: 108dvh;
+    min-height: 120dvh;
     align-items: flex-start;
     padding-top: 64px; /* keeps hero content below fixed header */
   }
 
   .hero-content {
-    min-height: calc(108dvh - 64px);
-    justify-content: flex-start;
-    padding-top: max(200px, 22vh);
+    min-height: calc(120dvh - 64px);
+    justify-content: center;
+    padding-top: max(300px, 34vh);
     padding-bottom: 12px;
     width: 100%;
     gap: 20px;
