@@ -1194,6 +1194,35 @@ textarea {
   }
 }
 
+/* Some phones/tablets sit between our "mobile" and "desktop" breakpoints.
+   Force the hero typography spacing to apply consistently in that range. */
+@media (max-width: 900px) and (min-width: 769px) {
+  .hero-kicker {
+    margin-top: -5px !important;
+    margin-bottom: 0 !important;
+    font-size: 8.6px !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+  }
+
+  .hero h1,
+  .hero-title {
+    margin: 0 0 8px !important;
+    font-size: clamp(26px, 7.2vw, 40px) !important;
+    line-height: 1.16 !important;
+    font-weight: 700 !important;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 12px !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    max-width: 100% !important;
+    padding: 0 4px !important;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
