@@ -1035,7 +1035,7 @@ textarea {
 
   /* When you tap a nav link, section scrolls below the header */
   html {
-    scroll-padding-top: 60px;
+    scroll-padding-top: 72px;
   }
 
   #hero,
@@ -1044,23 +1044,23 @@ textarea {
   #samples,
   #about,
   #contact {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 72px;
   }
 
   /* ========== MOBILE ONLY: hero layout (separate from desktop) ========== */
   .hero {
-    min-height: auto;
+    min-height: 108dvh;
     align-items: flex-start;
-    padding-top: 0;
+    padding-top: 56px; /* keeps hero content below fixed header */
   }
 
   .hero-content {
-    min-height: auto;
+    min-height: calc(108dvh - 56px);
     justify-content: flex-start;
-    padding-top: 64px;
-    padding-bottom: 28px;
+    padding-top: 28px;
+    padding-bottom: 36px;
     width: 100%;
-    gap: 18px;
+    gap: 20px;
   }
 
   .hero-main {
@@ -1133,7 +1133,7 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    margin-top: 8px;
+    margin-top: 14px;
     max-width: none;
     width: 100%;
     padding: 0 4px;
@@ -1145,7 +1145,7 @@ textarea {
   }
 
   .hero-product-tile img {
-    min-height: 0;
+    min-height: 96px;
     border-radius: 14px;
     border-width: 1px;
   }
