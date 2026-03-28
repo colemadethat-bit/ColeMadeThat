@@ -15,7 +15,6 @@
   --border: rgba(255, 255, 255, 0.08);
   --white: #ffffff;
   --black: #0a0a0a;
-  --cta-red: #b91c1c;
   --font-display: "Barlow Condensed", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
@@ -139,6 +138,17 @@ a:hover {
 
 .logo-cap {
   color: #fff;
+}
+
+/* Header logo: stay white on hover (override global a:hover orange) */
+.site-header a.logo:hover,
+.site-header a.logo:focus-visible {
+  color: #fff !important;
+}
+
+.site-header a.logo:hover .logo-cap,
+.site-header a.logo:focus-visible .logo-cap {
+  color: #fff !important;
 }
 
 .nav-desktop {
@@ -349,6 +359,12 @@ h3 {
 
 section {
   padding: clamp(3rem, 7vw, 5.5rem) 0;
+}
+
+/* Extra space after Process so anchor scroll doesn’t show Deals peeking */
+.section-process {
+  padding-bottom: clamp(5rem, 14vw, 8rem) !important;
+  scroll-margin-top: var(--header-h);
 }
 
 .section-header {
@@ -956,6 +972,8 @@ section {
 .section-deals {
   background: var(--white);
   color: var(--black);
+  padding-top: clamp(2.25rem, 5vw, 3.25rem) !important;
+  scroll-margin-top: calc(var(--header-h) + 0.5rem);
 }
 
 .section-deals .section-label,
@@ -1113,44 +1131,56 @@ section {
 
 .form-note .note-arrow {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--black);
-  border: 2px solid #374151;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: 800;
-  line-height: 1;
+  background: var(--accent);
+  border: none;
+  border-radius: 2px;
+  line-height: 0;
+  padding: 1px;
+}
+
+.form-note .note-arrow svg {
+  display: block;
 }
 
 .quote-title-stack {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.12rem;
   text-align: left;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.65rem;
 }
 
-.quote-title-stack .q1 {
+.quote-title-stack .q-get {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.85rem, 3.5vw, 2.65rem);
+  font-size: clamp(1.35rem, 3vw, 2rem);
   text-transform: uppercase;
-  color: var(--text);
-  line-height: 1;
+  color: #fff;
+  line-height: 1.05;
 }
 
-.quote-title-stack .q2 {
+.quote-title-stack .q-free {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.85rem, 3.5vw, 2.65rem);
+  font-size: clamp(1.65rem, 3.5vw, 2.5rem);
   text-transform: uppercase;
   color: var(--accent);
-  line-height: 1;
+  line-height: 1.05;
+}
+
+.quote-title-stack .q-today {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.05;
 }
 
 .form-divider {
@@ -1188,6 +1218,12 @@ section {
   letter-spacing: 0.04em;
 }
 
+.form-card .form-group input,
+.form-card .form-group select,
+.form-card .form-group textarea {
+  background: #151518;
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -1195,7 +1231,7 @@ section {
   padding: 0.7rem 0.9rem;
   font: inherit;
   color: var(--text);
-  background: var(--bg);
+  background: #151518;
   border: 1px solid #374151;
   border-radius: 8px;
   transition: border-color 0.15s, box-shadow 0.15s;
@@ -1265,28 +1301,25 @@ section {
   }
 }
 
-.faq-aside h2 {
+.faq-heading {
   text-align: left;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  color: #fff;
-  text-transform: none;
-  font-family: var(--font-body);
-  font-weight: 700;
-  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  line-height: 1.1;
 }
 
-.faq-aside h2 .faq-title-light {
-  color: #fff;
-  font-weight: 600;
-}
-
-.faq-aside h2 .faq-title-accent {
-  color: var(--accent);
+.faq-heading .faq-title-line {
   display: block;
-  margin-top: 0.15rem;
-  text-transform: uppercase;
   font-family: var(--font-display);
   font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.faq-heading .faq-title-line.faq-title-accent {
+  color: var(--accent);
+  margin-top: 0.12rem;
 }
 
 .faq-aside .link-quote {
@@ -1408,21 +1441,21 @@ section {
 }
 
 .cta-band h2 {
-  color: var(--cta-red);
+  color: var(--black);
   margin-bottom: 0.75rem;
 }
 
 .cta-band .lead {
-  color: var(--cta-red);
+  color: var(--black);
   margin-inline: auto;
   max-width: 36rem;
 }
 
 .cta-band .sub {
-  color: var(--cta-red);
+  color: var(--black);
   font-size: 0.9rem;
   margin-top: 1rem;
-  opacity: 0.95;
+  opacity: 0.92;
 }
 
 .cta-band .btn-dark {
@@ -1437,9 +1470,9 @@ section {
 /* —— Footer —— */
 .site-footer {
   padding: clamp(2.5rem, 5vw, 3.5rem) 0 2rem;
-  border-top: 1px solid #e5e7eb;
-  background: var(--white);
-  color: var(--black);
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  color: #d1d5db;
 }
 
 .footer-grid {
@@ -1461,22 +1494,24 @@ section {
   align-items: flex-start;
 }
 
-.footer-brand .logo {
+.footer-brand .logo-footer {
   font-size: 1.35rem;
+  color: #fff !important;
 }
 
-.footer-brand .logo {
-  color: var(--black);
+.footer-brand .logo-footer:hover,
+.footer-brand .logo-footer:focus-visible {
+  color: #fff !important;
 }
 
-.footer-brand .logo-cap {
-  color: var(--accent);
+.footer-brand .logo-footer .logo-cap {
+  color: #fff !important;
 }
 
 .footer-brand p {
   margin: 0.5rem 0 0;
   font-size: 0.9rem;
-  color: #4b5563;
+  color: #9ca3af;
   line-height: 1.5;
   max-width: 280px;
 }
@@ -1501,7 +1536,7 @@ section {
 }
 
 .footer-col a {
-  color: #374151;
+  color: #e5e7eb;
   font-size: 0.9rem;
 }
 
@@ -1512,11 +1547,11 @@ section {
 .footer-contact p {
   margin: 0 0 0.4rem;
   font-size: 0.9rem;
-  color: #4b5563;
+  color: #9ca3af;
 }
 
 .footer-contact a {
-  color: var(--black);
+  color: #f3f4f6;
 }
 
 .footer-cta {
@@ -1526,10 +1561,10 @@ section {
 .site-footer .fine {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   font-size: 0.8rem;
-  color: #6b7280;
+  color: #9ca3af;
 }
 
 .work-footer-row {
@@ -1556,5 +1591,73 @@ section {
 @media (max-width: 640px) {
   .work-footer-note {
     text-align: left;
+  }
+}
+
+/* —— Mobile —— */
+@media (max-width: 899px) {
+  .container {
+    width: min(100% - 1.25rem, var(--max));
+  }
+
+  .hero-content {
+    margin-left: 1rem;
+    margin-right: auto;
+    max-width: min(100%, 26rem);
+  }
+
+  .quote-split {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .faq-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat-bar {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .why-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-grid {
+    text-align: left;
+  }
+
+  .btn-primary,
+  .btn-ghost,
+  .btn-dark,
+  .btn-orange-black,
+  .btn-deal,
+  .nav-cta-header {
+    min-height: 44px;
+  }
+
+  .faq-item button {
+    min-height: 48px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .deal-body .btn {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-stack .hero-line {
+    font-size: clamp(1.65rem, 8vw, 2.5rem);
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr !important;
   }
 }
