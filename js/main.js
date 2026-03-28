@@ -27,38 +27,54 @@
 
   var service = document.getElementById("service");
   var multiWrap = document.getElementById("multi-wrap");
-  var detailWrap = document.getElementById("detail-wrap");
+  var stickerFields = document.getElementById("sticker-fields");
+  var bannerFields = document.getElementById("banner-fields");
+  var packagingFields = document.getElementById("packaging-fields");
+  var designFields = document.getElementById("design-fields");
   var quantity = document.getElementById("quantity");
+  var bannerQty = document.getElementById("banner_qty");
+  var packagingQty = document.getElementById("packaging_qty");
+  var designNeed = document.getElementById("design_need");
+  var packagingType = document.getElementById("packaging_type");
 
-  function needsDetail(val) {
-    return val === "labels" || val === "stickers" || val === "banners" || val === "packaging";
+  function show(el, on) {
+    if (!el) return;
+    el.classList.toggle("field-hidden", !on);
   }
 
-  function multiHasProduct() {
-    return (
-      document.querySelector('input[name="svc_labels"]:checked') ||
-      document.querySelector('input[name="svc_stickers"]:checked') ||
-      document.querySelector('input[name="svc_banners"]:checked') ||
-      document.querySelector('input[name="svc_packaging"]:checked')
-    );
+  function multiChecked(name) {
+    var cb = document.querySelector('input[name="' + name + '"]');
+    return cb && cb.checked;
   }
 
   function syncForm() {
-    if (!service || !multiWrap || !detailWrap) return;
+    if (!service) return;
     var val = service.value;
-    var showMulti = val === "multiple";
-    multiWrap.classList.toggle("field-hidden", !showMulti);
+    var isMulti = val === "multiple";
 
-    var showDetail = needsDetail(val) || (showMulti && multiHasProduct());
-    detailWrap.classList.toggle("field-hidden", !showDetail);
-    if (quantity) {
-      quantity.required = !!showDetail;
-    }
+    show(multiWrap, isMulti);
+
+    var showSticker =
+      val === "labels" ||
+      val === "stickers" ||
+      (isMulti && (multiChecked("svc_labels") || multiChecked("svc_stickers")));
+    var showBanner = val === "banners" || (isMulti && multiChecked("svc_banners"));
+    var showPackaging = val === "packaging" || (isMulti && multiChecked("svc_packaging"));
+    var showDesign = val === "design" || (isMulti && multiChecked("svc_design"));
+
+    show(stickerFields, showSticker);
+    show(bannerFields, showBanner);
+    show(packagingFields, showPackaging);
+    show(designFields, showDesign);
+
+    if (quantity) quantity.required = !!showSticker;
+    if (bannerQty) bannerQty.required = !!showBanner;
+    if (packagingQty) packagingQty.required = !!showPackaging;
+    if (designNeed) designNeed.required = !!showDesign;
+    if (packagingType) packagingType.required = !!showPackaging;
   }
 
-  if (service) {
-    service.addEventListener("change", syncForm);
-  }
+  if (service) service.addEventListener("change", syncForm);
   document.querySelectorAll("#multi-wrap input[type=checkbox]").forEach(function (cb) {
     cb.addEventListener("change", syncForm);
   });

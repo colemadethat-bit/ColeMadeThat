@@ -34,13 +34,16 @@
           <a href="#deals">Deals</a>
           <a href="#quote">Quote</a>
           <a href="#faq">FAQ</a>
-          <a class="nav-cta" href="#quote">Get a quote</a>
         </nav>
-        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
+        <div class="header-actions">
+          <a class="nav-cta-header" href="#quote">Get a quote</a>
+          <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+        <a href="#quote" class="accent-word" style="font-weight: 700">Get a quote</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#why">Why us</a>
@@ -56,8 +59,13 @@
       <section class="hero">
         <div class="hero-bg" role="img" aria-label=""></div>
         <div class="hero-inner container">
+          <div class="hero-content">
           <p class="hero-kicker">Labels · Stickers · Packaging · Design &amp; more</p>
-          <h1>Premium custom <span class="hero-print">printing</span> for growing businesses</h1>
+          <h1 class="hero-title-stack">
+            <span class="hero-line">Premium custom</span>
+            <span class="hero-line hero-print">printing</span>
+            <span class="hero-line hero-line-sm">for growing businesses</span>
+          </h1>
           <p class="hero-lead">
             Faster and better pricing than big print shops. Built for small brands and growing businesses that need
             quality without the wait.
@@ -90,6 +98,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
               <span>Real people — no ticket queues</span>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -136,12 +145,26 @@
               <cite><span class="role">Food brand</span></cite>
             </article>
           </div>
+          <div class="stat-bar">
+            <div class="stat-block">
+              <span class="stat-top">1–3</span>
+              <span class="stat-mid">Day turnaround</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-top">100+</span>
+              <span class="stat-mid">Happy clients</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-top">US</span>
+              <span class="stat-mid">Nationwide</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="bg-white" id="services">
         <div class="container">
-          <p class="section-label">02 · What we offer</p>
+          <p class="section-label-dash">— <span class="accent-word">What we offer</span></p>
           <header class="section-header">
             <h2>Services built for <span class="accent-word">your brand</span></h2>
           </header>
@@ -196,12 +219,17 @@
       <section class="bg-surface" id="why">
         <div class="container why-split">
           <div class="why-left">
-            <span class="why-sub">Why choose us</span>
-            <h2>Why work with us instead of big print companies?</h2>
+            <p class="section-label-dash why-sub">— <span class="accent-word">Why choose us</span></p>
+            <h2 class="why-head">
+              <span class="why-line1">Why work with us</span>
+              <span class="why-line2">instead of</span>
+              <span class="why-line3"><span class="accent-word">big print companies</span>?</span>
+            </h2>
             <p class="lead">
               Mass-market print shops are built for volume, not for you. We're built for growing brands that need quality,
               speed, and a real person to work with.
             </p>
+            <a class="btn btn-orange-black" href="#quote">Get a free quote</a>
           </div>
           <div class="why-features">
             <div class="why-row">
@@ -233,7 +261,10 @@
             </div>
             <div class="why-row">
               <div class="why-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 17 9 11 13 15 21 7"/>
+                  <polyline points="21 7 21 11 17 11"/>
+                </svg>
               </div>
               <div>
                 <p class="why-title">Flexible custom jobs</p>
@@ -242,7 +273,12 @@
             </div>
             <div class="why-row">
               <div class="why-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 11l4-3v6l-4-3V11z" fill="currentColor" stroke="none"/>
+                  <path d="M21 11l-4-3v6l4-3V11z" fill="currentColor" stroke="none"/>
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                  <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                </svg>
               </div>
               <div>
                 <p class="why-title">Built for growing brands</p>
@@ -255,7 +291,7 @@
 
       <section class="bg-white" id="work">
         <div class="container">
-          <p class="section-label">— <span class="accent-word">Product samples</span></p>
+          <p class="section-label-dash">— <span class="accent-word">Product samples</span></p>
           <header class="section-header">
             <h2 class="headline-dark">Real work, <span class="accent-word">real quality</span></h2>
             <p class="lead">Drop images into <code>images/work-1.jpg</code> … <code>work-6.jpg</code> (or update paths below).</p>
@@ -292,8 +328,11 @@
               <span class="work-label">More samples<span class="work-cat">Ask us</span></span>
             </div>
           </div>
-          <div class="btn-row" style="margin-top: 1.5rem; justify-content: center">
-            <a class="btn btn-primary" href="#quote">Get a free quote</a>
+          <div class="work-footer-row">
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#quote">Get a free quote</a>
+            </div>
+            <p class="work-footer-note">Want to see more? Ask us for samples.</p>
           </div>
         </div>
       </section>
@@ -302,24 +341,40 @@
         <div class="container">
           <p class="section-label"><span class="accent-word">How it works</span></p>
           <header class="section-header">
-            <h2>Simple <span class="accent-word">4-step process</span></h2>
+            <h2 class="process-head-simple">Simple <span class="accent-word">4-step process</span></h2>
           </header>
           <div class="steps">
             <div class="step">
+              <div class="step-num">01</div>
+              <div class="step-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              </div>
               <h3>Submit quote</h3>
-              <p>Tell us your specs — size, quantity, material, and any design files.</p>
+              <p>Fill out our simple quote form with your label specs — size, quantity, material, and any design files you have.</p>
             </div>
             <div class="step">
+              <div class="step-num">02</div>
+              <div class="step-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
               <h3>Approve design</h3>
-              <p>We send a proof. Use your art or let us design from scratch.</p>
+              <p>We'll prepare a proof for your review. Send your own file or let us design it from scratch.</p>
             </div>
             <div class="step">
+              <div class="step-num">03</div>
+              <div class="step-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              </div>
               <h3>Print &amp; produce</h3>
-              <p>Most orders finish within 1–3 business days after approval.</p>
+              <p>Once approved, we get to work. Most orders are printed and finished within 1–3 business days.</p>
             </div>
             <div class="step">
+              <div class="step-num">04</div>
+              <div class="step-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
               <h3>Pickup or delivery</h3>
-              <p>Local pickup or ship to your door — your choice.</p>
+              <p>Pick up locally or have your order shipped directly to your door.</p>
             </div>
           </div>
           <div class="btn-row" style="margin-top: 2rem">
@@ -328,9 +383,9 @@
         </div>
       </section>
 
-      <section id="deals">
+      <section class="section-deals" id="deals">
         <div class="container">
-          <p class="section-label">06 · <span class="accent-word">Deals</span></p>
+          <p class="section-label-dash">— <span class="accent-word">Deals</span></p>
           <header class="section-header">
             <h2>Simple, scalable <span class="accent-word">deals</span></h2>
             <p class="lead">Starter, growth, and scale packages — exact specs in your quote.</p>
@@ -342,10 +397,13 @@
                 <div class="deal-placeholder" style="display: none">Add deal-1.jpg</div>
               </div>
               <div class="deal-body">
-                <div class="deal-price">$100</div>
+                <div class="deal-lines">
+                  <span class="deal-line1">100 labels</span>
+                  <span class="deal-line2">$60</span>
+                </div>
                 <p class="deal-name">Starter</p>
                 <p class="lead">Great for testing a new product or a small batch.</p>
-                <a class="btn btn-ghost" href="#quote" style="width: 100%">Get this deal</a>
+                <a class="btn btn-deal" href="#quote">Get this deal</a>
               </div>
             </article>
             <article class="deal-card">
@@ -354,10 +412,13 @@
                 <div class="deal-placeholder" style="display: none">Add deal-2.jpg</div>
               </div>
               <div class="deal-body">
-                <div class="deal-price">$500</div>
+                <div class="deal-lines">
+                  <span class="deal-line1">500 labels</span>
+                  <span class="deal-line2">$200</span>
+                </div>
                 <p class="deal-name">Growth</p>
                 <p class="lead">Better per-unit cost for brands moving volume.</p>
-                <a class="btn btn-primary" href="#quote" style="width: 100%">Get this deal</a>
+                <a class="btn btn-deal" href="#quote">Get this deal</a>
               </div>
             </article>
             <article class="deal-card">
@@ -366,10 +427,13 @@
                 <div class="deal-placeholder" style="display: none">Add deal-3.jpg</div>
               </div>
               <div class="deal-body">
-                <div class="deal-price">$200</div>
+                <div class="deal-lines">
+                  <span class="deal-line1">1,000+ labels</span>
+                  <span class="deal-line2">Custom</span>
+                </div>
                 <p class="deal-name">Scale</p>
                 <p class="lead">Strong value for established runs and repeat orders.</p>
-                <a class="btn btn-ghost" href="#quote" style="width: 100%">Get this deal</a>
+                <a class="btn btn-deal" href="#quote">Get this deal</a>
               </div>
             </article>
           </div>
@@ -383,16 +447,19 @@
         <div class="container quote-split">
           <div class="quote-copy">
             <p class="section-label">07 · Free quote</p>
-            <h2>Get your <span class="accent-word">free quote</span> today</h2>
+            <div class="quote-title-stack">
+              <span class="q1">Get your free quote</span>
+              <span class="q2">today</span>
+            </div>
             <p class="lead">
               Fill out the form and we'll get back to you within a few hours with pricing and details. No commitment
               required.
             </p>
             <ul class="form-note">
-              <li>No commitment required</li>
-              <li>Response within a few hours</li>
-              <li>Direct communication — no support tickets</li>
-              <li>Custom quotes for any size or quantity</li>
+              <li><span class="note-arrow" aria-hidden="true">→</span><span>No commitment required</span></li>
+              <li><span class="note-arrow" aria-hidden="true">→</span><span>Response within a few hours</span></li>
+              <li><span class="note-arrow" aria-hidden="true">→</span><span>Direct communication — no support tickets</span></li>
+              <li><span class="note-arrow" aria-hidden="true">→</span><span>Custom quotes for any size or quantity</span></li>
             </ul>
           </div>
           <div class="form-card">
@@ -428,14 +495,15 @@
               <div id="multi-wrap" class="form-group field-hidden">
                 <label>Which services? (select all that apply)</label>
                 <div class="multi-grid">
-                  <label><input type="checkbox" name="svc_labels" value="yes" /> Labels</label>
-                  <label><input type="checkbox" name="svc_stickers" value="yes" /> Stickers</label>
-                  <label><input type="checkbox" name="svc_banners" value="yes" /> Banners</label>
-                  <label><input type="checkbox" name="svc_design" value="yes" /> Design</label>
-                  <label><input type="checkbox" name="svc_packaging" value="yes" /> Packaging</label>
+                  <label><input type="checkbox" name="svc_labels" value="yes" data-svc="labels" /> Labels</label>
+                  <label><input type="checkbox" name="svc_stickers" value="yes" data-svc="stickers" /> Stickers</label>
+                  <label><input type="checkbox" name="svc_banners" value="yes" data-svc="banners" /> Banners</label>
+                  <label><input type="checkbox" name="svc_design" value="yes" data-svc="design" /> Design</label>
+                  <label><input type="checkbox" name="svc_packaging" value="yes" data-svc="packaging" /> Packaging</label>
                 </div>
               </div>
-              <div id="detail-wrap" class="field-hidden">
+              <div id="sticker-fields" class="field-hidden">
+                <p class="form-hint" style="margin-bottom: 0.75rem; color: var(--accent); font-weight: 600">Labels / stickers</p>
                 <div class="form-group">
                   <label for="size">Size</label>
                   <input id="size" name="size" type="text" placeholder='e.g. 3" × 2"' />
@@ -452,6 +520,76 @@
                   <label for="file">Upload file (optional)</label>
                   <input id="file" name="attachment" type="file" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.svg" />
                   <p class="form-hint">PDF, AI, EPS, PNG, JPG, SVG</p>
+                </div>
+              </div>
+              <div id="banner-fields" class="field-hidden">
+                <hr class="form-divider" />
+                <p class="form-hint" style="margin-bottom: 0.75rem; color: var(--accent); font-weight: 600">Banners</p>
+                <div class="form-group">
+                  <label for="banner_size">Banner size</label>
+                  <input id="banner_size" name="banner_size" type="text" placeholder='e.g. 3ft × 6ft' />
+                </div>
+                <div class="form-group">
+                  <label for="banner_qty">Quantity *</label>
+                  <input id="banner_qty" name="banner_qty" type="text" placeholder="e.g. 1" />
+                </div>
+                <div class="form-group">
+                  <label for="banner_finishing">Finishing</label>
+                  <select id="banner_finishing" name="banner_finishing">
+                    <option value="">Select…</option>
+                    <option>Grommets</option>
+                    <option>Hems</option>
+                    <option>Pole pockets</option>
+                    <option>None</option>
+                  </select>
+                </div>
+              </div>
+              <div id="packaging-fields" class="field-hidden">
+                <div class="form-group">
+                  <label for="packaging_type">Packaging type *</label>
+                  <select id="packaging_type" name="packaging_type">
+                    <option value="">Select…</option>
+                    <option>Mylar bags</option>
+                    <option>Mylar jars</option>
+                    <option>Bags</option>
+                    <option>Pouches</option>
+                    <option>Tubes</option>
+                    <option>Amber jars</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="packaging_labels">Labels on packaging</label>
+                  <select id="packaging_labels" name="packaging_labels">
+                    <option value="">Select…</option>
+                    <option>With labels</option>
+                    <option>Without labels</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="packaging_qty">Quantity *</label>
+                  <input id="packaging_qty" name="packaging_qty" type="text" placeholder="e.g. 500" />
+                </div>
+              </div>
+              <div id="design-fields" class="field-hidden">
+                <div class="form-group">
+                  <label for="design_need">What do you need designed? *</label>
+                  <select id="design_need" name="design_need">
+                    <option value="">Select…</option>
+                    <option>Labels</option>
+                    <option>Banners</option>
+                    <option>Stickers</option>
+                    <option>Logo</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="design_details">Design details</label>
+                  <textarea
+                    id="design_details"
+                    name="design_details"
+                    placeholder="Describe your brand, colors, copy, timeline, reference links, etc."
+                  ></textarea>
                 </div>
               </div>
               <div class="form-group">
@@ -471,43 +609,61 @@
       <section class="bg-elevated" id="faq">
         <div class="container faq-split">
           <div class="faq-aside">
-            <h2>Common <span class="accent-word">questions</span></h2>
+            <h2><span class="faq-title-light">Common</span><span class="faq-title-accent">questions</span></h2>
             <p class="lead">Have another question? We're happy to help.</p>
-            <a class="link-quote accent-word" href="#quote">Get a free quote →</a>
+            <a class="link-quote" href="#quote">Get a free quote</a>
           </div>
           <div class="faq-list">
             <div class="faq-item">
-              <button type="button">What's your turnaround time?</button>
+              <button type="button">
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+                <span>What's your turnaround time?</span>
+              </button>
               <div class="faq-panel">
                 Most orders are ready in 1–3 business days after proof approval. Rush may be available — note it in your
                 quote request.
               </div>
             </div>
             <div class="faq-item">
-              <button type="button">Do I need a design ready?</button>
+              <button type="button">
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+                <span>Do I need a design ready?</span>
+              </button>
               <div class="faq-panel">
                 No. Send print-ready files, sketches, or nothing — we offer design help and proofs before we print.
               </div>
             </div>
             <div class="faq-item">
-              <button type="button">What materials do you use?</button>
+              <button type="button">
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+                <span>What materials do you use?</span>
+              </button>
               <div class="faq-panel">
                 Waterproof and durable options, gloss and matte finishes, and materials suited to jars, bottles, outdoor
                 use, and more.
               </div>
             </div>
             <div class="faq-item">
-              <button type="button">Do you offer bulk pricing?</button>
+              <button type="button">
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+                <span>Do you offer bulk pricing?</span>
+              </button>
               <div class="faq-panel">Yes — higher quantities lower your cost per piece. We'll itemize it in your quote.</div>
             </div>
             <div class="faq-item">
-              <button type="button">Can you match my current labels?</button>
+              <button type="button">
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+                <span>Can you match my current labels?</span>
+              </button>
               <div class="faq-panel">
                 Often yes. Send photos or a physical sample if you can, and we'll tell you what's possible.
               </div>
             </div>
             <div class="faq-item">
-              <button type="button">What's the minimum order?</button>
+              <button type="button">
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+                <span>What's the minimum order?</span>
+              </button>
               <div class="faq-panel">
                 Minimums depend on specs — we’ll confirm in your quote. Many runs start around a $50 minimum.
               </div>
