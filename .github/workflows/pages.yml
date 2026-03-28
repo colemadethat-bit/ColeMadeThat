@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html .nojekyll _site/
-          cp -r assets _site/
+          cp -r css js _site/
           if [ -f CNAME ]; then cp CNAME _site/; fi
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
