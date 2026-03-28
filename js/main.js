@@ -25,16 +25,42 @@
     });
   });
 
-  var form = document.getElementById("quote-form");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      var action = form.getAttribute("action") || "";
-      if (action.indexOf("YOUR_FORM_ID") !== -1) {
-        e.preventDefault();
-        alert(
-          "Set up your form: edit index.html and replace the form action with your Formspree URL (https://formspree.io/f/xxxx), or use another form backend."
-        );
-      }
-    });
+  var service = document.getElementById("service");
+  var multiWrap = document.getElementById("multi-wrap");
+  var detailWrap = document.getElementById("detail-wrap");
+  var quantity = document.getElementById("quantity");
+
+  function needsDetail(val) {
+    return val === "labels" || val === "stickers" || val === "banners" || val === "packaging";
   }
+
+  function multiHasProduct() {
+    return (
+      document.querySelector('input[name="svc_labels"]:checked') ||
+      document.querySelector('input[name="svc_stickers"]:checked') ||
+      document.querySelector('input[name="svc_banners"]:checked') ||
+      document.querySelector('input[name="svc_packaging"]:checked')
+    );
+  }
+
+  function syncForm() {
+    if (!service || !multiWrap || !detailWrap) return;
+    var val = service.value;
+    var showMulti = val === "multiple";
+    multiWrap.classList.toggle("field-hidden", !showMulti);
+
+    var showDetail = needsDetail(val) || (showMulti && multiHasProduct());
+    detailWrap.classList.toggle("field-hidden", !showDetail);
+    if (quantity) {
+      quantity.required = !!showDetail;
+    }
+  }
+
+  if (service) {
+    service.addEventListener("change", syncForm);
+  }
+  document.querySelectorAll("#multi-wrap input[type=checkbox]").forEach(function (cb) {
+    cb.addEventListener("change", syncForm);
+  });
+  syncForm();
 })();
