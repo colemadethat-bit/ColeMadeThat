@@ -1,0 +1,8 @@
+{
+  "name": "colemade-lab-site",
+  "private": true,
+  "description": "Static site + Vercel serverless for Stripe Checkout",
+  "dependencies": {
+    "stripe": "^14.25.0"
+  }
+}

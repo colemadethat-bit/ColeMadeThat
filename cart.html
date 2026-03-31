@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | ColeMadeThat</title>
+    <meta name="description" content="Review your order and pay securely with Stripe (after you connect a checkout API)." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html#top" class="logo" aria-label="ColeMadeThat home">
+          <img class="logo-img" src="images/logo.jpg" alt="" width="44" height="44" />
+          <span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span>
+        </a>
+        <nav class="nav-desktop" aria-label="Main">
+          <a class="nav-anchor" href="index.html#services">Shop</a>
+          <a class="nav-anchor" href="index.html#why">Why us</a>
+          <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
+          <a class="nav-anchor" href="index.html#deals">Deals</a>
+          <a class="nav-anchor" href="index.html#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+          <a class="nav-cart nav-cart-icon" href="cart.html" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+          </a>
+          <a class="nav-cta-header" href="index.html#services">Shop</a>
+          <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+        <a href="cart.html">Cart</a>
+        <a href="index.html#services">Shop</a>
+        <a href="index.html#top">Home</a>
+        <a class="nav-anchor" href="index.html#services">Shop</a>
+        <a class="nav-anchor" href="index.html#why">Why us</a>
+        <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
+        <a class="nav-anchor" href="index.html#deals">Deals</a>
+        <a class="nav-anchor" href="index.html#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="bg-surface cart-page">
+        <div class="container container-narrow">
+          <p class="shop-breadcrumb"><a href="index.html">Home</a> · Cart</p>
+          <h1 class="cart-h1">Your cart</h1>
+
+          <div class="cart-layout">
+            <div id="cart-root"></div>
+
+            <aside class="cart-summary-panel">
+              <h2 class="order-summary-title">Summary</h2>
+              <div class="order-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+              </div>
+              <div class="order-row">
+                <span>Shipping</span>
+                <span id="cart-shipping">—</span>
+              </div>
+              <div class="order-row" id="cart-promo-line" style="display: none">
+                <span>Promo</span>
+                <span id="cart-promo-amt">—</span>
+              </div>
+              <div class="order-row order-row-total">
+                <span>Total (est.)</span>
+                <span id="cart-grand">$0.00</span>
+              </div>
+              <div class="shop-field" style="margin-top: 1rem">
+                <label for="cart-promo">Promo code</label>
+                <div class="promo-row">
+                  <input type="text" id="cart-promo" placeholder="SAVE10" autocomplete="off" />
+                  <button type="button" class="btn btn-ghost" id="cart-promo-apply">Apply</button>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 1rem" id="checkout-stripe">
+                Pay with Stripe
+              </button>
+              <p class="form-hint" style="margin-top: 0.75rem">
+                Connect <code>COLEMADE_STRIPE_CHECKOUT_URL</code> in <code>js/site-config.js</code> to your server that creates a
+                Checkout Session. Your server must recalculate totals — never trust the browser.
+              </p>
+              <a class="btn btn-ghost" style="width: 100%; margin-top: 0.5rem; text-align: center" href="index.html#services">Add more to your order</a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-elevated" id="faq">
+        <div class="container faq-split">
+          <div class="faq-aside">
+            <h2 class="faq-heading">
+              <span class="faq-title-line">Common</span>
+              <span class="faq-title-line faq-title-accent">questions</span>
+            </h2>
+            <p class="lead">Have another question? We're happy to help.</p>
+            <a class="link-quote" href="index.html#services">Shop categories</a>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button type="button">
+                <span class="faq-q">What's your turnaround time?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+              </button>
+              <div class="faq-panel">
+                Most orders are ready in 1–3 business days after proof approval. Rush may be available — note it in your
+                order or email.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button">
+                <span class="faq-q">Do I need a design ready?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+              </button>
+              <div class="faq-panel">
+                No. Send print-ready files, sketches, or nothing — we offer design help and proofs before we print.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button">
+                <span class="faq-q">What materials do you use?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+              </button>
+              <div class="faq-panel">
+                Waterproof and durable options, gloss and matte finishes, and materials suited to jars, bottles, outdoor
+                use, and more.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button">
+                <span class="faq-q">Do you offer bulk pricing?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+              </button>
+              <div class="faq-panel">Yes — higher quantities lower your cost per piece. We’ll itemize it in your estimate.</div>
+            </div>
+            <div class="faq-item">
+              <button type="button">
+                <span class="faq-q">Can you match my current labels?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+              </button>
+              <div class="faq-panel">
+                Often yes. Send photos or a physical sample if you can, and we'll tell you what's possible.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button">
+                <span class="faq-q">What's the minimum order?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
+              </button>
+              <div class="faq-panel">
+                Minimums depend on specs — we’ll confirm for your job. Many runs start around a $50 minimum.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
+          <div>
+            <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
+              ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
+            >
+            <p>Premium custom labels, stickers, packaging &amp; design for growing brands.</p>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick links</h3>
+          <ul>
+            <li><a href="index.html#top">Home</a></li>
+            <li><a href="index.html#services">Shop</a></li>
+            <li><a href="index.html#why">Why us</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#deals">Deals</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h3>Get in touch</h3>
+          <p>Serving local &amp; growing brands · Est. 2025</p>
+          <p>Fast 1–3 day turnaround · Bulk pricing · Direct communication</p>
+          <div class="footer-cta">
+            <a class="btn btn-primary" href="index.html#services">Shop categories</a>
+          </div>
+          <p style="margin-top: 1rem">
+            <a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a><br />
+            <a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a><br />
+            <a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a><br />
+            <a href="tel:+12672725446">267-272-5446</a>
+          </p>
+        </div>
+      </div>
+      <p class="fine">© ColeMadeThat</p>
+    </footer>
+
+    <script src="js/site-config.js" defer></script>
+
+    <script src="js/cart.js" defer></script>
+    <script src="js/pricing.js" defer></script>
+    <script src="js/stripe-checkout.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/cart-page.js" defer></script>
+  </body>
+</html>

@@ -1,5 +1,10 @@
 {
-  "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false
+  "functions": {
+    "api/create-checkout-session.js": {
+      "maxDuration": 30
+    },
+    "api/stripe-webhook.js": {
+      "maxDuration": 10
+    }
+  }
 }
