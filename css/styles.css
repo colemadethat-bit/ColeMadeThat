@@ -317,11 +317,16 @@ a:hover {
   display: none;
   position: fixed;
   inset: var(--header-h) 0 0 0;
-  background: var(--bg);
+  z-index: 120;
+  background-color: #09090b;
+  background: #09090b;
+  opacity: 1;
+  backdrop-filter: none;
   padding: 1.5rem;
   flex-direction: column;
   gap: 0.25rem;
   border-top: 1px solid var(--border);
+  overflow-y: auto;
 }
 
 .nav-mobile.is-open {
