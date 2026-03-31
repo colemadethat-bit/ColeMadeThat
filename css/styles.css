@@ -288,8 +288,9 @@ a:hover {
   flex-direction: column;
   gap: 5px;
   padding: 0.5rem;
-  background: none;
-  border: none;
+  background: rgba(9, 9, 11, 0.84);
+  border: 1px solid var(--border);
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -2766,10 +2767,23 @@ section.bg-white#services {
     width: min(100% - 1.25rem, var(--max));
   }
 
+  .hero {
+    min-height: calc(100svh - var(--header-h));
+  }
+
+  .hero-inner {
+    justify-content: center;
+    padding: clamp(1.35rem, 5vw, 2.25rem) 0 clamp(0.9rem, 3vw, 1.35rem);
+  }
+
   .hero-content {
     margin-left: 1rem;
     margin-right: auto;
-    max-width: min(100%, 26rem);
+    max-width: min(100%, 30rem);
+  }
+
+  .hero-title-stack .hero-line {
+    font-size: clamp(2.1rem, 8.6vw, 3.1rem);
   }
 
   .quote-split {
@@ -2812,15 +2826,25 @@ section.bg-white#services {
   .deal-body .btn {
     min-height: 44px;
   }
+
+  .section-deals .grid-3 {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(240px, 78vw);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.35rem;
+  }
+
+  .section-deals .deal-card {
+    scroll-snap-align: start;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-title-stack .hero-line {
-    font-size: clamp(1.65rem, 8vw, 2.5rem);
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
+    font-size: clamp(2.05rem, 10vw, 2.8rem);
   }
 
   .steps {
