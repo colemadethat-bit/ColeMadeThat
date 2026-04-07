@@ -5,24 +5,52 @@
 const Stripe = require("stripe");
 const { buildLineItems } = require("./_lib/pricing");
 
-function corsHeaders() {
-  var origin = process.env.ALLOWED_ORIGIN || "*";
-  return {
-    "Access-Control-Allow-Origin": origin,
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-  };
+/** Origins allowed to call this API (browser sends exact Origin — www vs non-www must both match). */
+function buildAllowedOrigins() {
+  var set = new Set();
+  var raw = (process.env.ALLOWED_ORIGIN || "").trim();
+  if (raw === "*") {
+    set.add("*");
+    return set;
+  }
+  raw.split(",").forEach(function (part) {
+    var t = part.trim().replace(/\/$/, "");
+    if (t) set.add(t);
+  });
+  var site = (process.env.COLEMADE_SITE_URL || "").trim().replace(/\/$/, "");
+  if (site.indexOf("http") === 0) {
+    try {
+      var u = new URL(site);
+      set.add(u.origin);
+      var h = u.hostname;
+      if (h.indexOf("www.") === 0) {
+        set.add(u.protocol + "//" + h.slice(4));
+      } else {
+        set.add(u.protocol + "//www." + h);
+      }
+    } catch (e) {
+      /* ignore */
+    }
+  }
+  if (set.size === 0) set.add("*");
+  return set;
 }
 
-function applyCors(res) {
-  var h = corsHeaders();
-  Object.keys(h).forEach(function (k) {
-    res.setHeader(k, h[k]);
-  });
+function applyCors(req, res) {
+  var allowed = buildAllowedOrigins();
+  var requestOrigin = req.headers.origin || req.headers.Origin || "";
+  if (allowed.has("*")) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+  } else if (requestOrigin && allowed.has(requestOrigin)) {
+    res.setHeader("Access-Control-Allow-Origin", requestOrigin);
+    res.setHeader("Vary", "Origin");
+  }
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
 module.exports = async function handler(req, res) {
-  applyCors(res);
+  applyCors(req, res);
 
   if (req.method === "OPTIONS") {
     return res.status(204).end();
