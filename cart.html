@@ -210,7 +210,11 @@
       <p class="fine">© ColeMadeThat</p>
     </footer>
 
-    <!-- Load first (no defer) so checkout URL exists before cart / Stripe scripts run -->
+    <!-- Inline URL so checkout works even if js/site-config.js is cached, 404, or slow to update on GitHub Pages -->
+    <script>
+      window.COLEMADE_STRIPE_CHECKOUT_URL =
+        "https://colemadethatstripe.vercel.app/api/create-checkout-session";
+    </script>
     <script src="js/site-config.js"></script>
 
     <script src="js/cart.js" defer></script>

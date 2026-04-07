@@ -25,8 +25,16 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cart: cart, currency: "usd" }),
       });
-      if (!res.ok) throw new Error("Checkout failed");
-      var data = await res.json();
+      var raw = await res.text();
+      var data = {};
+      try {
+        data = raw ? JSON.parse(raw) : {};
+      } catch (parseErr) {
+        if (!res.ok) throw new Error(raw.slice(0, 180) || "Bad response from server");
+      }
+      if (!res.ok) {
+        throw new Error(data.error || raw.slice(0, 180) || "Checkout failed (" + res.status + ")");
+      }
       if (data.url) {
         window.location.href = data.url;
         return;
@@ -34,7 +42,12 @@
       if (data.error) throw new Error(data.error);
       throw new Error("No checkout URL returned");
     } catch (e) {
-      window.alert("Could not start checkout: " + (e.message || String(e)));
+      var msg = e.message || String(e);
+      if (msg === "Failed to fetch" || msg.indexOf("NetworkError") !== -1) {
+        msg +=
+          "\n\nOften: CORS or the Vercel API is down. In Vercel re-save STRIPE_SECRET_KEY (sensitive values look blank when you edit — paste again), remove trailing / from URLs, then Redeploy.";
+      }
+      window.alert("Could not start checkout: " + msg);
     }
   };
 })();

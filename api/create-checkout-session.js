@@ -32,18 +32,43 @@ function buildAllowedOrigins() {
       /* ignore */
     }
   }
+  /* GitHub Pages (project site uses same origin as user/org pages host) */
+  set.add("https://colemadethat-bit.github.io");
   if (set.size === 0) set.add("*");
   return set;
 }
 
+function normalizeOrigin(o) {
+  if (!o || typeof o !== "string") return "";
+  return o.trim().replace(/\/$/, "");
+}
+
 function applyCors(req, res) {
   var allowed = buildAllowedOrigins();
-  var requestOrigin = req.headers.origin || req.headers.Origin || "";
+  var requestOrigin = normalizeOrigin(req.headers.origin || req.headers.Origin || "");
   if (allowed.has("*")) {
     res.setHeader("Access-Control-Allow-Origin", "*");
   } else if (requestOrigin && allowed.has(requestOrigin)) {
     res.setHeader("Access-Control-Allow-Origin", requestOrigin);
     res.setHeader("Vary", "Origin");
+  } else if (requestOrigin) {
+    /* Same site as COLEMADE_SITE_URL (www vs apex already in set; this catches oddities) */
+    var site = (process.env.COLEMADE_SITE_URL || "").trim().replace(/\/$/, "");
+    try {
+      var bu = new URL(site);
+      var ru = new URL(requestOrigin + "/");
+      function hostKey(h) {
+        return String(h || "")
+          .replace(/^www\./i, "")
+          .toLowerCase();
+      }
+      if (ru.protocol === "https:" && hostKey(ru.hostname) === hostKey(bu.hostname)) {
+        res.setHeader("Access-Control-Allow-Origin", requestOrigin);
+        res.setHeader("Vary", "Origin");
+      }
+    } catch (e) {
+      /* ignore */
+    }
   }
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
