@@ -215,12 +215,13 @@
       window.COLEMADE_STRIPE_CHECKOUT_URL =
         "https://colemadethatstripe.vercel.app/api/create-checkout-session";
     </script>
-    <script src="js/site-config.js"></script>
+    <!-- ?v= bumps force browsers to load new JS after deploy (fixes “works in incognito only”) -->
+    <script src="js/site-config.js?v=4"></script>
 
-    <script src="js/cart.js" defer></script>
-    <script src="js/pricing.js" defer></script>
-    <script src="js/stripe-checkout.js" defer></script>
-    <script src="js/main.js" defer></script>
-    <script src="js/cart-page.js" defer></script>
+    <script src="js/cart.js?v=4" defer></script>
+    <script src="js/pricing.js?v=4" defer></script>
+    <script src="js/stripe-checkout.js?v=4" defer></script>
+    <script src="js/main.js?v=4" defer></script>
+    <script src="js/cart-page.js?v=4" defer></script>
   </body>
 </html>
