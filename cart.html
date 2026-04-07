@@ -210,7 +210,8 @@
       <p class="fine">© ColeMadeThat</p>
     </footer>
 
-    <script src="js/site-config.js" defer></script>
+    <!-- Load first (no defer) so checkout URL exists before cart / Stripe scripts run -->
+    <script src="js/site-config.js"></script>
 
     <script src="js/cart.js" defer></script>
     <script src="js/pricing.js" defer></script>
