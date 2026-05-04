@@ -37,7 +37,6 @@
       if (p === "stickers") qtyLabel.textContent = "Quantity (stickers)";
       else qtyLabel.textContent = "Quantity (labels)";
     }
-    syncPackagingOther();
     syncDisabledInputs();
   }
 
@@ -162,19 +161,10 @@
     }
   });
 
-  var packType = document.getElementById("q-pack-type");
-  var packOtherWrap = document.getElementById("q-pack-other-wrap");
-  function syncPackagingOther() {
-    if (!packType || !packOtherWrap) return;
-    packOtherWrap.classList.toggle("field-hidden", packType.value !== "Other");
-  }
-  if (packType) packType.addEventListener("change", syncPackagingOther);
-
   if (window.location.hash === "#thanks") {
     var th = document.getElementById("thanks");
     if (th) th.style.display = "block";
   }
 
-  syncPackagingOther();
   setProduct(product);
 })();

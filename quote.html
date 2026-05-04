@@ -25,7 +25,7 @@
         </a>
         <nav class="nav-desktop" aria-label="Main">
           <div class="nav-dropdown">
-            <a href="index.html#services">Services</a>
+            <a class="nav-anchor" href="index.html#services">Services</a>
             <ul class="nav-dropdown-menu" role="menu" aria-label="Services">
               <li role="none"><a href="labels.html" role="menuitem">Labels</a></li>
               <li role="none"><a href="stickers.html" role="menuitem">Stickers</a></li>
@@ -133,12 +133,16 @@
 
       <section class="quote-form-dark-wrap" id="quote-form-section">
         <div class="container container-narrow">
-          <header class="section-header">
-            <h2 class="services-headline">Start your project</h2>
-            <p class="lead">
-              Complete the form below. Choose a product type — fields update based on what you pick.
-            </p>
-          </header>
+          <div class="quote-project-banner">
+            <div class="quote-project-banner-bg" aria-hidden="true"></div>
+            <div class="quote-project-banner-overlay" aria-hidden="true"></div>
+            <div class="quote-project-banner-inner section-header">
+              <h2 class="services-headline">Start your project</h2>
+              <p class="lead">
+                Complete the form below. Choose a product type — fields update based on what you pick.
+              </p>
+            </div>
+          </div>
 
           <div class="quote-form-panel">
             <form id="full-quote-form" action="https://formspree.io/f/xzdayagl" method="POST">
@@ -152,36 +156,57 @@
                 <div class="quote-product-grid" role="radiogroup" aria-label="Product type">
                   <button type="button" class="quote-product-card is-selected" data-quote-product="labels" aria-pressed="true">
                     <span class="qpc-icon" aria-hidden="true">
-                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="8" y="12" width="32" height="24" rx="2" />
-                        <line x1="8" y1="20" x2="40" y2="20" />
-                        <line x1="14" y1="16" x2="22" y2="16" />
+                      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                        <rect x="5" y="10" width="38" height="30" rx="2" stroke="currentColor" stroke-width="2" />
+                        <rect x="9" y="14" width="8" height="6" rx="1" fill="currentColor" opacity="0.35" />
+                        <rect x="19" y="14" width="8" height="6" rx="1" fill="currentColor" opacity="0.35" />
+                        <rect x="29" y="14" width="8" height="6" rx="1" fill="currentColor" opacity="0.35" />
+                        <rect x="9" y="22" width="8" height="6" rx="1" fill="currentColor" opacity="0.35" />
+                        <rect x="19" y="22" width="8" height="6" rx="1" fill="currentColor" opacity="0.35" />
+                        <rect x="29" y="22" width="8" height="6" rx="1" fill="currentColor" opacity="0.35" />
                       </svg>
                     </span>
                     <span class="qpc-label">Labels</span>
                   </button>
                   <button type="button" class="quote-product-card" data-quote-product="stickers" aria-pressed="false">
                     <span class="qpc-icon" aria-hidden="true">
-                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 32c-4-8-2-18 6-22s18-2 22 6 2 18-6 22-18 2-22-6z" />
+                      <svg viewBox="0 0 48 48" aria-hidden="true">
+                        <path
+                          d="M24 5 L29 18 L42 18 L32 26 L36 40 L24 32 L12 40 L16 26 L6 18 L19 18 Z"
+                          fill="currentColor"
+                          opacity="0.92"
+                        />
+                        <circle cx="18" cy="22" r="2.2" fill="#0c0c0e" />
+                        <circle cx="30" cy="22" r="2.2" fill="#0c0c0e" />
+                        <path d="M19 29 Q24 33 29 29" stroke="#0c0c0e" stroke-width="1.8" fill="none" stroke-linecap="round" />
                       </svg>
                     </span>
                     <span class="qpc-label">Stickers</span>
                   </button>
                   <button type="button" class="quote-product-card" data-quote-product="banners" aria-pressed="false">
                     <span class="qpc-icon" aria-hidden="true">
-                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="6" y="14" width="36" height="20" rx="1" />
-                        <line x1="6" y1="24" x2="42" y2="24" />
+                      <svg viewBox="0 0 48 48" aria-hidden="true">
+                        <rect x="7" y="11" width="34" height="24" rx="1" fill="none" stroke="currentColor" stroke-width="2" />
+                        <rect x="7" y="11" width="34" height="4" fill="#B22234" />
+                        <rect x="7" y="19" width="34" height="4" fill="#fff" />
+                        <rect x="7" y="27" width="34" height="4" fill="#B22234" />
+                        <rect x="7" y="35" width="34" height="4" fill="#fff" />
+                        <rect x="7" y="11" width="14" height="12" fill="#3C3B6E" />
+                        <circle cx="11" cy="14.5" r="1" fill="#fff" />
+                        <circle cx="14.5" cy="14.5" r="1" fill="#fff" />
+                        <circle cx="18" cy="14.5" r="1" fill="#fff" />
+                        <circle cx="11" cy="18" r="1" fill="#fff" />
+                        <circle cx="14.5" cy="18" r="1" fill="#fff" />
                       </svg>
                     </span>
                     <span class="qpc-label">Banners</span>
                   </button>
                   <button type="button" class="quote-product-card" data-quote-product="packaging" aria-pressed="false">
                     <span class="qpc-icon" aria-hidden="true">
-                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M8 18 L24 10 L40 18 V34 L24 42 L8 34 Z" />
-                        <line x1="24" y1="10" x2="24" y2="42" />
+                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <ellipse cx="24" cy="14" rx="11" ry="3.5" />
+                        <path d="M13 14 v22 c0 5 22 5 22 0 V14" />
+                        <line x1="17" y1="22" x2="31" y2="22" opacity="0.45" />
                       </svg>
                     </span>
                     <span class="qpc-label">Packaging</span>
@@ -293,16 +318,12 @@
                   <div class="shop-field">
                     <label for="q-pack-type">Packaging type</label>
                     <select id="q-pack-type" name="packaging_type">
-                      <option value="Mylar jars">Mylar jars</option>
+                      <option value="Miron jars">Miron jars</option>
+                      <option value="Glass jars">Glass jars</option>
                       <option value="Mylar pouches">Mylar pouches</option>
-                      <option value="Tubes">Tubes</option>
+                      <option value="Pre-roll tubes">Pre-roll tubes</option>
                       <option value="Boxes">Boxes</option>
-                      <option value="Other">Other</option>
                     </select>
-                  </div>
-                  <div id="q-pack-other-wrap" class="shop-field field-hidden">
-                    <label for="q-pack-other">Describe other</label>
-                    <input id="q-pack-other" name="packaging_other_detail" type="text" placeholder="e.g. custom jar size…" />
                   </div>
                   <div class="shop-field">
                     <label for="q-pack-qty-input">Quantity</label>
@@ -358,18 +379,16 @@
       </section>
     </main>
 
-    <footer class="site-footer site-footer--extended" id="contact">
+    <footer class="site-footer site-footer--v3" id="contact">
       <div class="container">
-        <div class="footer-top-row">
-          <div class="footer-brand-simple footer-brand">
+        <div class="footer-v3-top">
+          <div class="footer-v3-brand">
             <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
-            <div>
-              <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
-                ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
-              >
-            </div>
+            <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
+              ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
+            >
           </div>
-          <div class="footer-col">
+          <div class="footer-v3-col">
             <h3>Services</h3>
             <ul>
               <li><a href="labels.html">Labels</a></li>
@@ -379,22 +398,25 @@
               <li><a href="index.html#services">What we print</a></li>
             </ul>
           </div>
-          <div class="footer-col">
-            <h3>Company</h3>
-            <ul>
-              <li><a href="index.html#why">About us</a></li>
-              <li><a href="mailto:ColeMadeThat@gmail.com">Contact us</a></li>
-              <li><a href="index.html#faq">FAQ</a></li>
-            </ul>
+          <div class="footer-v3-col">
+            <h3>About us</h3>
+            <p class="footer-v3-muted">
+              <a href="index.html#why">Why ColeMadeThat</a> — direct communication, fast turnaround, built for growing brands.
+            </p>
+          </div>
+          <div class="footer-v3-col footer-v3-contact-card">
+            <h3>Contact us</h3>
+            <p><a href="tel:+12672725446">267-272-5446</a></p>
+            <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
+            <p class="footer-hours">Business hours: Monday–Friday, 9 a.m.–5 p.m.</p>
+            <a class="btn btn-primary footer-v3-quote-btn" href="quote.html">Get a quote</a>
           </div>
         </div>
 
-        <div class="footer-mid-grid">
-          <div class="footer-quick-form">
-            <h3>Got an idea? Need a quote? Have questions?</h3>
-            <p class="lead" style="font-size: 0.95rem; color: #9ca3af; margin: 0 0 1rem">
-              We’re here to help — send a quick note and we’ll get back to you.
-            </p>
+        <div class="footer-v3-bottom">
+          <div class="footer-quick-form footer-v3-form">
+            <h3>Contact us</h3>
+            <p class="footer-v3-lead">Got an idea? Need a quote? Have questions? We’re here to help.</p>
             <form action="https://formspree.io/f/xzdayagl" method="POST">
               <input type="hidden" name="_subject" value="Footer contact – ColeMadeThat" />
               <input type="hidden" name="_next" value="https://www.colemadethat.com/quote.html#contact" />
@@ -408,7 +430,7 @@
               </div>
               <div class="form-group">
                 <label for="footer-phone">Phone</label>
-                <input id="footer-phone" name="footer_phone" type="tel" autocomplete="tel" placeholder="Optional" />
+                <input id="footer-phone" name="footer_phone" type="tel" autocomplete="tel" placeholder="Phone number" />
               </div>
               <div class="form-group">
                 <label for="footer-msg">Comment</label>
@@ -417,17 +439,11 @@
               <button type="submit" class="btn btn-primary" style="width: 100%">Send message</button>
             </form>
           </div>
-          <div class="footer-contact-stack footer-contact">
-            <h3>Get in touch</h3>
-            <p>
-              <a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a>
-            </p>
-            <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
+          <div class="footer-v3-aside">
+            <p><a href="index.html#faq">FAQ</a></p>
+            <p><a href="mailto:ColeMadeThat@gmail.com">Email ColeMadeThat@gmail.com</a></p>
             <p><a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a></p>
-            <p><a href="tel:+12672725446">267-272-5446</a></p>
-            <div class="footer-cta">
-              <a class="btn btn-primary" href="quote.html">Get a quote</a>
-            </div>
+            <p><a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a></p>
           </div>
         </div>
 
