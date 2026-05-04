@@ -3,6 +3,7 @@
   "private": true,
   "description": "Static site + Vercel serverless for Stripe Checkout",
   "dependencies": {
+    "busboy": "^1.6.0",
     "stripe": "^14.25.0"
   }
 }

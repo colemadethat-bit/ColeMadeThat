@@ -20,11 +20,6 @@
       if (s >= 100) return { cost: 0, label: "Free (orders $100+)" };
       return { cost: 12.99, label: "Est. $12.99 (under $100)" };
     },
-    designLine: function (hoursStr) {
-      var h = Math.max(1, parseFloat(String(hoursStr).replace(/[^\d.]/g, "")) || 2);
-      var total = 199 + h * 75;
-      return { total: total, each: total / h, qty: 1 };
-    },
     packLine: function (qtyStr) {
       var q = Math.max(1, parseInt(String(qtyStr), 10) || 100);
       var total = 45 + q * 0.12;

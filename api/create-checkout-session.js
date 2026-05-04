@@ -4,6 +4,7 @@
  */
 const Stripe = require("stripe");
 const { buildLineItems } = require("./_lib/pricing");
+const { encodeCartMetadata } = require("./_lib/cart-metadata");
 
 /** Origins allowed to call this API (browser sends exact Origin — www vs non-www must both match). */
 function buildAllowedOrigins() {
@@ -123,25 +124,34 @@ module.exports = async function handler(req, res) {
     var li = lineItems[j];
     subtotalCents += li.price_data.unit_amount * (li.quantity || 1);
   }
-  if (subtotalCents < 50) {
+  /* Stripe needs ≥ $0.50; business minimum is higher (default $50). Override with COLEMADE_MIN_ORDER_CENTS=50 for testing. */
+  var minBizCents = parseInt(process.env.COLEMADE_MIN_ORDER_CENTS || "5000", 10);
+  if (isNaN(minBizCents) || minBizCents < 50) minBizCents = 5000;
+  if (subtotalCents < minBizCents) {
     return res.status(400).json({
       error:
-        "Minimum card checkout is $0.50. Add a paid item, or contact us for promo-only orders.",
+        "Minimum order is $" +
+        (minBizCents / 100).toFixed(2) +
+        ". Add items or contact us for smaller runs.",
     });
   }
 
   var stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   try {
+    /* Full cart snapshot in metadata chunks (webhook decodes → your email). Filenames only until customer uploads. */
     var session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: lineItems,
       success_url: siteUrl + "/cart.html?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: siteUrl + "/cart.html?cancelled=1",
-      metadata: {
-        source: "colemade_cart",
-        item_count: String(cart.length),
-      },
+      metadata: Object.assign(
+        {
+          source: "colemade_cart",
+          item_count: String(cart.length),
+        },
+        encodeCartMetadata(cart)
+      ),
     });
 
     return res.status(200).json({ url: session.url });

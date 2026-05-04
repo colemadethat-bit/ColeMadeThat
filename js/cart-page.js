@@ -25,12 +25,6 @@
       it.total = pb.total.toFixed(2);
       it.each = pb.each.toFixed(2);
     }
-    if (it.type === "design" && window.ColemadePricing) {
-      var pd = window.ColemadePricing.designLine(it.w);
-      it.totalNum = pd.total;
-      it.total = pd.total.toFixed(2);
-      it.each = (pd.total / (parseFloat(String(it.w).replace(/[^\d.]/g, "")) || 2)).toFixed(2);
-    }
     if (it.type === "packaging" && window.ColemadePricing) {
       var pk = window.ColemadePricing.packLine(it.qty);
       it.qty = String(pk.qty);
@@ -39,12 +33,12 @@
       it.each = pk.each.toFixed(3);
     }
     if (it.type === "deal") {
-      var prices = { deal1: 60, deal2: 175, deal3: 0 };
+      var prices = { deal1: 60, deal2: 175 };
       var de = it.deal || "";
       var p = Object.prototype.hasOwnProperty.call(prices, de) ? prices[de] : 0;
       it.totalNum = p;
       it.total = p.toFixed(2);
-      it.each = p > 0 ? "Package" : "Promo";
+      it.each = "Package";
     }
     return it;
   }
@@ -55,23 +49,19 @@
     if (t === "stickers") return " / sticker";
     if (t === "banners") return " / sq ft";
     if (t === "packaging") return " / unit";
-    if (t === "design") return " / hr est.";
     return " / PC";
   }
 
   function dealThumb(deal) {
     if (deal === "deal1") return "images/deal-1.jpg";
     if (deal === "deal2") return "images/deal-2.jpg";
-    return "images/deal-3.jpg";
+    return "images/deal-1.jpg";
   }
 
   function lineHtml(it) {
     if (it.type === "deal") {
       var thumb = dealThumb(it.deal);
-      var meta =
-        it.deal === "deal3"
-          ? "Discount applied when we finalize your order"
-          : "Package pricing — we’ll confirm artwork before print";
+      var meta = "Package pricing — we’ll confirm artwork before print";
       return (
         '<div class="cart-line cart-line--deal" data-id="' +
         esc(it.id) +
@@ -117,6 +107,11 @@
       " · " +
       esc(it.size) +
       "</p>" +
+      (it.artwork
+        ? '<p class="cart-meta cart-meta--files">Artwork (file names only — files are not uploaded to us yet): ' +
+          esc(it.artwork) +
+          "</p>"
+        : "") +
       '<div class="cart-line-qty"><label>Qty <input type="number" class="cart-qty" min="1" data-id="' +
       esc(it.id) +
       '" value="' +
@@ -144,7 +139,13 @@
       cp.dataset.loaded = "1";
     }
 
-    var items = window.ColemadeCart.get().map(function (it) {
+    var rawItems = window.ColemadeCart.get().filter(function (it) {
+      return it.type !== "design";
+    });
+    if (rawItems.length !== window.ColemadeCart.get().length) {
+      window.ColemadeCart.save(rawItems);
+    }
+    var items = rawItems.map(function (it) {
       return recalcItem(Object.assign({}, it));
     });
 

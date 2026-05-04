@@ -6,7 +6,7 @@
     <title>ColeMadeThat | Custom Labels, Stickers &amp; Packaging</title>
     <meta
       name="description"
-      content="Premium custom printing for growing businesses — labels, stickers, banners, packaging, and design. Fast turnaround and direct communication."
+      content="Premium custom printing for growing businesses — labels, stickers, banners, and packaging. Fast turnaround and direct communication."
     />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="ColeMadeThat | Custom Labels &amp; Stickers" />
@@ -27,29 +27,22 @@
           <span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span>
         </a>
         <nav class="nav-desktop" aria-label="Main">
-          <a class="nav-anchor" href="#services">Shop</a>
+          <a class="nav-anchor" href="#services">Categories</a>
           <a class="nav-anchor" href="#why">Why us</a>
           <a class="nav-anchor" href="#portfolio">Portfolio</a>
           <a class="nav-anchor" href="#deals">Deals</a>
           <a class="nav-anchor" href="#faq">FAQ</a>
         </nav>
         <div class="header-actions">
-          <a class="nav-cart nav-cart-icon" href="cart.html" aria-label="Shopping cart">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="9" cy="21" r="1" />
-              <circle cx="20" cy="21" r="1" />
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-            </svg>
-          </a>
-          <a class="nav-cta-header" href="#services">Shop</a>
+          <a class="nav-cta-header" href="quote.html">Get a quote</a>
           <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
-        <a href="cart.html">Cart</a>
-        <a href="#services">Shop</a>
+        <a href="quote.html">Get a quote</a>
+        <a href="#services">Categories</a>
         <a href="#top">Home</a>
         <a class="nav-anchor" href="#why">Why us</a>
         <a class="nav-anchor" href="#portfolio">Portfolio</a>
@@ -61,10 +54,25 @@
     <main id="top">
       <!-- Add images/hero.jpg for full-bleed photo -->
       <section class="hero">
-        <div class="hero-bg" role="img" aria-label=""></div>
+        <div class="hero-bg" role="img" aria-label="">
+          <div class="hero-bg-static" aria-hidden="true"></div>
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="images/hero.jpg"
+            aria-hidden="true"
+          >
+            <source src="images/hero.mp4" type="video/mp4" />
+            <source src="images/hero.webm" type="video/webm" />
+          </video>
+          <div class="hero-bg-overlay" aria-hidden="true"></div>
+        </div>
         <div class="hero-inner container">
           <div class="hero-content">
-          <p class="hero-kicker">Labels · Stickers · Packaging · Design &amp; more</p>
+          <p class="hero-kicker">Labels · Stickers · Banners · Packaging</p>
           <h1 class="hero-title-stack">
             <span class="hero-line">Premium custom</span>
             <span class="hero-line hero-print">printing</span>
@@ -91,7 +99,7 @@
             </div>
             <div class="hero-cta-stack">
               <div class="hero-cta-row">
-                <a class="btn btn-primary" href="#services">Shop categories</a>
+                <a class="btn btn-primary" href="quote.html">Get a quote</a>
                 <a class="btn btn-ghost" href="#portfolio">See portfolio</a>
               </div>
             </div>
@@ -103,45 +111,40 @@
       <section class="bg-white" id="services">
         <div class="container">
           <span id="services-anchor" class="scroll-target" aria-hidden="true"></span>
-          <p class="section-label">— <span class="accent-word">Shop by category</span></p>
+          <p class="section-label">— <span class="accent-word">What we print</span></p>
           <header class="section-header">
             <h2 class="services-headline">Print custom labels, stickers, and more</h2>
-            <p class="lead">Pick a category to configure a product and estimate pricing. Add items to your cart when you’re ready.</p>
+            <p class="lead">Tap a category to see examples and details — then request a quote when you’re ready.</p>
           </header>
-          <div class="shop-category-grid" role="list">
-            <a class="shop-cat" role="listitem" href="labels.html">
-              <div class="shop-cat-img">
-                <img src="images/cat-labels.jpg" alt="" width="400" height="300" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
+          <div class="home-cat-grid" role="list">
+            <a class="home-cat-tile" role="listitem" href="labels.html">
+              <div class="home-cat-img">
+                <img src="images/cat-labels.jpg" alt="" width="800" height="800" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
               </div>
               <span class="shop-cat-name">Labels</span>
             </a>
-            <a class="shop-cat" role="listitem" href="stickers.html">
-              <div class="shop-cat-img">
-                <img src="images/cat-stickers.jpg" alt="" width="400" height="300" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
+            <a class="home-cat-tile" role="listitem" href="stickers.html">
+              <div class="home-cat-img">
+                <img src="images/cat-stickers.jpg" alt="" width="800" height="800" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
               </div>
               <span class="shop-cat-name">Stickers</span>
             </a>
-            <a class="shop-cat" role="listitem" href="banners.html">
-              <div class="shop-cat-img">
-                <img src="images/cat-banners.jpg" alt="" width="400" height="300" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
+            <a class="home-cat-tile" role="listitem" href="banners.html">
+              <div class="home-cat-img">
+                <img src="images/cat-banners.jpg" alt="" width="800" height="800" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
               </div>
               <span class="shop-cat-name">Banners</span>
             </a>
-            <a class="shop-cat" role="listitem" href="design.html">
-              <div class="shop-cat-img">
-                <img src="images/cat-design.jpg" alt="" width="400" height="300" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
-              </div>
-              <span class="shop-cat-name">Design</span>
-            </a>
-            <a class="shop-cat" role="listitem" href="packaging.html">
-              <div class="shop-cat-img">
-                <img src="images/cat-packaging.jpg" alt="" width="400" height="300" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
+            <a class="home-cat-tile" role="listitem" href="packaging.html">
+              <div class="home-cat-img">
+                <img src="images/cat-packaging.jpg" alt="" width="800" height="800" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('shop-cat-img--fallback')" />
               </div>
               <span class="shop-cat-name">Packaging</span>
             </a>
           </div>
           <div class="btn-row" style="margin-top: 2rem">
-            <a class="btn btn-primary" href="#faq">Questions?</a>
+            <a class="btn btn-primary" href="quote.html">Start your quote</a>
+            <a class="btn btn-ghost" href="#faq">Questions?</a>
           </div>
         </div>
       </section>
@@ -161,7 +164,7 @@
                 Mass-market print shops are built for volume, not for you. We're built for growing brands that need quality,
                 speed, and a real person to work with.
               </p>
-              <a class="btn btn-orange-black" href="#services">Shop categories</a>
+              <a class="btn btn-orange-black" href="quote.html">Get a quote</a>
             </div>
             <div class="why-features why-features-compact">
               <div class="why-row">
@@ -243,7 +246,7 @@
                 <div class="step-icon" aria-hidden="true">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                 </div>
-                <h3>Approve design</h3>
+                <h3>Approve proof</h3>
                 <p>We send a proof — you review, we revise if needed.</p>
               </div>
               <div class="step">
@@ -252,7 +255,7 @@
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
                 </div>
                 <h3>Print &amp; produce</h3>
-                <p>Most orders finish in 1–3 business days after approval.</p>
+                <p>Most orders finish in 3–5 business days after approval.</p>
               </div>
               <div class="step">
                 <div class="step-num">04</div>
@@ -264,7 +267,7 @@
               </div>
             </div>
             <div class="btn-row process-bundled-cta">
-              <a class="btn btn-primary" href="#services">Shop categories</a>
+              <a class="btn btn-primary" href="quote.html">Get a quote</a>
             </div>
           </div>
         </div>
@@ -322,24 +325,9 @@
           <p class="section-label-dash">— <span class="accent-word">Deals</span></p>
           <header class="section-header">
             <h2>Simple, scalable <span class="accent-word">deals</span></h2>
-            <p class="lead">Welcome offer, starter batch, and volume packs — add a deal to your cart to get started.</p>
+            <p class="lead">Starter batch and volume packs — ask for a quote and mention the deal you want.</p>
           </header>
-          <div class="grid-3">
-            <article class="deal-card">
-              <div class="deal-img">
-                <img src="images/deal-3.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
-                <div class="deal-placeholder" style="display: none">Add deal-3.jpg</div>
-              </div>
-              <div class="deal-body">
-                <div class="deal-lines">
-                  <span class="deal-line1">First-time customer</span>
-                  <span class="deal-line2">10% off</span>
-                </div>
-                <p class="deal-name">Welcome</p>
-                <p class="lead">10% off your first order when we quote — ask for details.</p>
-                <a class="btn btn-deal deal-cta" href="cart.html" data-deal="deal3">Get this deal</a>
-              </div>
-            </article>
+          <div class="deals-grid-2">
             <article class="deal-card">
               <div class="deal-img">
                 <img src="images/deal-1.jpg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
@@ -352,7 +340,7 @@
                 </div>
                 <p class="deal-name">Starter</p>
                 <p class="lead">Great for testing a new product or a small batch.</p>
-                <a class="btn btn-deal deal-cta" href="cart.html" data-deal="deal1">Get this deal</a>
+                <a class="btn btn-deal deal-cta" href="quote.html?deal=deal1">Ask for quote for deal</a>
               </div>
             </article>
             <article class="deal-card">
@@ -367,7 +355,7 @@
                 </div>
                 <p class="deal-name">Growth</p>
                 <p class="lead">Better per-unit cost for brands moving volume.</p>
-                <a class="btn btn-deal deal-cta" href="cart.html" data-deal="deal2">Get this deal</a>
+                <a class="btn btn-deal deal-cta" href="quote.html?deal=deal2">Ask for quote for deal</a>
               </div>
             </article>
           </div>
@@ -411,158 +399,14 @@
             </ul>
           </div>
           <div class="form-card">
-            <p class="form-hint" style="margin: 0 0 1rem">
+            <p class="lead" style="margin-top: 0">
+              Start your project on the quote page — choose labels, stickers, banners, or packaging, add sizes and quantity,
+              and attach files if you have them.
+            </p>
+            <p class="form-hint" style="margin: 0 0 1.25rem">
               Artwork can also be emailed to <a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a>.
             </p>
-            <form id="quote-form" action="https://formspree.io/f/xzdayagl" method="POST" enctype="multipart/form-data">
-              <input type="hidden" name="_subject" value="New quote request – ColeMadeThat" />
-              <input type="hidden" name="_next" value="https://www.colemadethat.com/#quote" />
-              <input type="hidden" id="service-deal-send" value="" disabled />
-              <div class="form-group">
-                <label for="name">Name *</label>
-                <input id="name" name="name" type="text" required placeholder="Your name" autocomplete="name" />
-              </div>
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input id="email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone *</label>
-                <input id="phone" name="phone" type="tel" required placeholder="(555) 555-5555" autocomplete="tel" />
-              </div>
-              <div class="form-group">
-                <label for="service">What do you need? *</label>
-                <select id="service" name="service" required>
-                  <option value="">Select…</option>
-                  <option value="labels">Labels</option>
-                  <option value="stickers">Stickers</option>
-                  <option value="banners">Banners</option>
-                  <option value="design">Design services</option>
-                  <option value="packaging">Packaging support</option>
-                  <option value="multiple">Multiple services</option>
-                </select>
-              </div>
-              <div id="multi-wrap" class="form-group field-hidden">
-                <label>Which services? (select all that apply)</label>
-                <div class="multi-grid">
-                  <label><input type="checkbox" name="svc_labels" value="yes" data-svc="labels" /> Labels</label>
-                  <label><input type="checkbox" name="svc_stickers" value="yes" data-svc="stickers" /> Stickers</label>
-                  <label><input type="checkbox" name="svc_banners" value="yes" data-svc="banners" /> Banners</label>
-                  <label><input type="checkbox" name="svc_design" value="yes" data-svc="design" /> Design</label>
-                  <label><input type="checkbox" name="svc_packaging" value="yes" data-svc="packaging" /> Packaging</label>
-                </div>
-              </div>
-              <div id="sticker-fields" class="field-hidden">
-                <p class="form-hint" style="margin-bottom: 0.75rem; color: var(--accent); font-weight: 600">Labels / stickers</p>
-                <div class="form-group">
-                  <label for="size">Size</label>
-                  <input id="size" name="size" type="text" placeholder='e.g. 3" × 2"' />
-                </div>
-                <div class="form-group">
-                  <label for="quantity">Quantity *</label>
-                  <input id="quantity" name="quantity" type="text" placeholder="e.g. 500" />
-                </div>
-                <div class="form-group">
-                  <label for="designs">Number of designs</label>
-                  <input id="designs" name="designs" type="text" placeholder="e.g. 2" />
-                </div>
-                <div class="form-group">
-                  <label for="file">Upload file (optional)</label>
-                  <input id="file" type="file" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.svg" disabled />
-                  <p class="form-hint">PDF, AI, EPS, PNG, JPG, SVG</p>
-                </div>
-              </div>
-              <div id="deal-fields" class="field-hidden">
-                <p class="form-hint" style="margin-bottom: 0.75rem; color: var(--accent); font-weight: 600">Your deal</p>
-                <p class="form-hint" style="margin-bottom: 1rem">
-                  Upload your design file — we’ll match size &amp; quantity to the deal you picked (no need to enter them here).
-                </p>
-                <div class="form-group">
-                  <label for="deal_attachment">Upload file *</label>
-                  <input id="deal_attachment" type="file" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.svg" disabled />
-                  <p class="form-hint">PDF, AI, EPS, PNG, JPG, SVG</p>
-                </div>
-              </div>
-              <div id="banner-fields" class="field-hidden">
-                <hr class="form-divider" />
-                <p class="form-hint" style="margin-bottom: 0.75rem; color: var(--accent); font-weight: 600">Banners</p>
-                <div class="form-group">
-                  <label for="banner_size">Banner size</label>
-                  <input id="banner_size" name="banner_size" type="text" placeholder='e.g. 3ft × 6ft' />
-                </div>
-                <div class="form-group">
-                  <label for="banner_qty">Quantity *</label>
-                  <input id="banner_qty" name="banner_qty" type="text" placeholder="e.g. 1" />
-                </div>
-                <div class="form-group">
-                  <label for="banner_finishing">Finishing</label>
-                  <select id="banner_finishing" name="banner_finishing">
-                    <option value="">Select…</option>
-                    <option>Grommets</option>
-                    <option>Hems</option>
-                    <option>Pole pockets</option>
-                    <option>None</option>
-                  </select>
-                </div>
-              </div>
-              <div id="packaging-fields" class="field-hidden">
-                <div class="form-group">
-                  <label for="packaging_type">Packaging type *</label>
-                  <select id="packaging_type" name="packaging_type">
-                    <option value="">Select…</option>
-                    <option>Mylar bags</option>
-                    <option>Mylar jars</option>
-                    <option>Bags</option>
-                    <option>Pouches</option>
-                    <option>Tubes</option>
-                    <option>Amber jars</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="packaging_labels">Labels on packaging</label>
-                  <select id="packaging_labels" name="packaging_labels">
-                    <option value="">Select…</option>
-                    <option>With labels</option>
-                    <option>Without labels</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="packaging_qty">Quantity *</label>
-                  <input id="packaging_qty" name="packaging_qty" type="text" placeholder="e.g. 500" />
-                </div>
-              </div>
-              <div id="design-fields" class="field-hidden">
-                <div class="form-group">
-                  <label for="design_need">What do you need designed? *</label>
-                  <select id="design_need" name="design_need">
-                    <option value="">Select…</option>
-                    <option>Labels</option>
-                    <option>Banners</option>
-                    <option>Stickers</option>
-                    <option>Logo</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="design_details">Design details</label>
-                  <textarea
-                    id="design_details"
-                    name="design_details"
-                    placeholder="Describe your brand, colors, copy, timeline, reference links, etc."
-                  ></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="notes">Additional notes</label>
-                <textarea
-                  id="notes"
-                  name="notes"
-                  placeholder="Timeline, special instructions, rush requests…"
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%">Get a free quote</button>
-            </form>
+            <a class="btn btn-primary" style="width: 100%; text-align: center" href="quote.html">Open full quote form</a>
           </div>
         </div>
       </section>
@@ -576,7 +420,7 @@
               <span class="faq-title-line faq-title-accent">questions</span>
             </h2>
             <p class="lead">Any other questions? Contact <a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a>.</p>
-            <a class="link-quote" href="#services">Shop categories</a>
+            <a class="link-quote" href="quote.html">Get a quote</a>
           </div>
           <div class="faq-list">
             <div class="faq-item">
@@ -645,7 +489,7 @@
             packaging.
           </p>
           <div class="btn-row" style="justify-content: center">
-            <a class="btn btn-dark" href="#services">Shop categories</a>
+            <a class="btn btn-dark" href="quote.html">Get a quote</a>
           </div>
           <p class="sub">No commitment · Fast response · Direct communication</p>
         </div>
@@ -660,14 +504,15 @@
             <a href="#top" class="logo logo-footer" style="display: inline-flex"
               ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
             >
-            <p>Premium custom labels, stickers, packaging &amp; design for growing brands.</p>
+            <p>Premium custom labels, stickers, banners &amp; packaging for growing brands.</p>
           </div>
         </div>
         <div class="footer-col">
           <h3>Quick links</h3>
           <ul>
             <li><a href="#top">Home</a></li>
-            <li><a href="#services">Shop</a></li>
+            <li><a href="quote.html">Get a quote</a></li>
+            <li><a href="#services">Categories</a></li>
             <li><a href="#why">Why us</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#deals">Deals</a></li>
@@ -679,7 +524,7 @@
           <p>Serving local &amp; growing brands · Est. 2025</p>
           <p>Fast 1–3 day turnaround · Bulk pricing · Direct communication</p>
           <div class="footer-cta">
-            <a class="btn btn-primary" href="#services">Shop categories</a>
+            <a class="btn btn-primary" href="quote.html">Get a quote</a>
           </div>
           <p style="margin-top: 1rem">
             <a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a><br />
@@ -692,7 +537,6 @@
       <p class="fine">© ColeMadeThat</p>
     </footer>
 
-    <script src="js/cart.js" defer></script>
     <script src="js/anchor-scroll.js" defer></script>
     <script src="js/main.js" defer></script>
   </body>

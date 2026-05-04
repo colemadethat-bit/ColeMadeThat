@@ -57,6 +57,20 @@
     if (sumQty && qtyEl) sumQty.value = qtyEl.value;
   }
 
+  function clampDims() {
+    var lim =
+      (window.LabelPricingConfig && window.LabelPricingConfig.dimLimitsIn) || { min: 0.5, max: 15 };
+    function one(el) {
+      if (!el) return;
+      var n = parseFloat(String(el.value).replace(/[^\d.]/g, ""));
+      if (!isFinite(n)) n = lim.min;
+      n = Math.min(lim.max, Math.max(lim.min, n));
+      el.value = String(Math.round(n * 1000) / 1000);
+    }
+    one(wEl);
+    one(hEl);
+  }
+
   if (sumQty && qtyEl) {
     sumQty.addEventListener("input", function () {
       qtyEl.value = sumQty.value;
@@ -66,6 +80,7 @@
 
   function estimate() {
     if (!window.ColemadePricing) return;
+    clampDims();
     var shape = shapeVal ? shapeVal.value : "contour";
     var finish = finishVal ? finishVal.value : "gloss";
     var qty = parseInt(String(qtyEl && qtyEl.value), 10) || 1;
@@ -113,9 +128,10 @@
       estimate();
     });
 
-  document.getElementById("labels-add-cart") &&
+   document.getElementById("labels-add-cart") &&
     document.getElementById("labels-add-cart").addEventListener("click", function () {
       if (!window.ColemadeCart || !window.ColemadePricing) return;
+      clampDims();
       var shape = shapeVal ? shapeVal.value : "";
       var finish = finishVal ? finishVal.value : "";
       var qty = parseInt(String(qtyEl && qtyEl.value), 10) || 1;
@@ -123,7 +139,13 @@
       var h = hEl ? hEl.value : "";
       var pr = window.ColemadePricing.sheetLabelsLine(w, h, qty, shape);
       var fileEl = document.getElementById("lbl-file");
-      var art = fileEl && fileEl.files && fileEl.files[0] ? fileEl.files[0].name : "";
+      var artNames = [];
+      if (fileEl && fileEl.files && fileEl.files.length) {
+        for (var fi = 0; fi < fileEl.files.length; fi++) {
+          artNames.push(fileEl.files[fi].name);
+        }
+      }
+      var art = artNames.length ? artNames.join(", ") : "";
       window.ColemadeCart.add({
         type: "labels",
         label: "Sheet labels",
@@ -139,6 +161,7 @@
         totalNum: pr.total,
         each: pr.each.toFixed(3),
         artwork: art,
+        artworkFiles: artNames,
         thumb: "images/labels-thumb.jpg",
       });
       window.location.href = "cart.html";

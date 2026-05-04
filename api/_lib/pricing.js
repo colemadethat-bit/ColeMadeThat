@@ -15,11 +15,6 @@ function sheetLabelsLine(w, h, qty, shape) {
   return { total: total, qty: q };
 }
 
-function designLine(hoursStr) {
-  var h = Math.max(1, parseFloat(String(hoursStr).replace(/[^\d.]/g, "")) || 2);
-  return { total: 199 + h * 75, qty: 1 };
-}
-
 function packLine(qtyStr) {
   var q = Math.max(1, parseInt(String(qtyStr), 10) || 100);
   return { total: 45 + q * 0.12, qty: q };
@@ -51,24 +46,16 @@ function lineTotalForItem(it) {
     var pb = bannerLine(it.w, it.h, it.qty);
     return { total: pb.total, label: "Banner — " + (it.size || "") + " — qty " + pb.qty };
   }
-  if (it.type === "design") {
-    var pd = designLine(it.w);
-    return { total: pd.total, label: "Design — est. hours" };
-  }
   if (it.type === "packaging") {
     var pk = packLine(it.qty);
     return { total: pk.total, label: "Packaging — qty " + pk.qty };
   }
   if (it.type === "deal") {
-    var prices = { deal1: 60, deal2: 175, deal3: 0 };
+    var prices = { deal1: 60, deal2: 175 };
     var de = it.deal || "";
     var p = Object.prototype.hasOwnProperty.call(prices, de) ? prices[de] : 0;
     var name =
-      de === "deal1"
-        ? "Deal — 100 × 5″ labels"
-        : de === "deal2"
-          ? "Deal — 500 × 2″ labels"
-          : "Deal — first order promo";
+      de === "deal1" ? "Deal — 100 × 5″ labels" : de === "deal2" ? "Deal — 500 × 2″ labels" : "Deal — package";
     return { total: p, label: name };
   }
   return { total: 0, label: "Unknown" };

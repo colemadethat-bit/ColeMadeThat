@@ -59,6 +59,8 @@
           <p class="shop-breadcrumb"><a href="index.html">Home</a> · Cart</p>
           <h1 class="cart-h1">Your cart</h1>
 
+          <div id="order-success-banner" class="order-success-banner" hidden></div>
+
           <div class="cart-layout">
             <div id="cart-root"></div>
 
@@ -91,8 +93,7 @@
                 Pay with Stripe
               </button>
               <p class="form-hint" style="margin-top: 0.75rem">
-                Connect <code>COLEMADE_STRIPE_CHECKOUT_URL</code> in <code>js/site-config.js</code> to your server that creates a
-                Checkout Session. Your server must recalculate totals — never trust the browser.
+                After payment, you can upload print files on this page — we email them to the shop. Totals are calculated on the server.
               </p>
               <a class="btn btn-ghost" style="width: 100%; margin-top: 0.5rem; text-align: center" href="index.html#services">Add more to your order</a>
             </aside>
@@ -216,12 +217,13 @@
         "https://colemadethatstripe.vercel.app/api/create-checkout-session";
     </script>
     <!-- ?v= bumps force browsers to load new JS after deploy (fixes “works in incognito only”) -->
-    <script src="js/site-config.js?v=4"></script>
+    <script src="js/site-config.js?v=5"></script>
 
-    <script src="js/cart.js?v=4" defer></script>
-    <script src="js/pricing.js?v=4" defer></script>
-    <script src="js/stripe-checkout.js?v=4" defer></script>
-    <script src="js/main.js?v=4" defer></script>
-    <script src="js/cart-page.js?v=4" defer></script>
+    <script src="js/cart.js?v=5" defer></script>
+    <script src="js/pricing.js?v=5" defer></script>
+    <script src="js/stripe-checkout.js?v=5" defer></script>
+    <script src="js/main.js?v=5" defer></script>
+    <script src="js/cart-page.js?v=5" defer></script>
+    <script src="js/order-success.js?v=5" defer></script>
   </body>
 </html>

@@ -29,6 +29,13 @@ npm install
 
 4. Deploy. Note your Vercel URL, e.g. `https://your-project.vercel.app`.
 
+### Where things are in the Vercel dashboard
+
+- **Project home** — lists **Deployments** (each git push builds here). Open a deployment to see **Build Logs** and runtime **Functions** logs.
+- **Settings → Environment Variables** — add or edit `STRIPE_*`, `COLEMADE_SITE_URL`, `ALLOWED_ORIGIN`, webhook secrets, etc. **Redeploy** after changes so production picks them up (or use “Redeploy” on the latest deployment).
+- **Settings → Git** — confirms the connected GitHub repo and branch.
+- **Logs** (in the top nav or under the project) — live and recent function output; useful when debugging checkout or webhooks.
+
 ## 4) Connect the storefront
 
 Edit **`js/site-config.js`**:
@@ -45,12 +52,38 @@ Use your real Vercel hostname. Commit and push so **cart.html** loads this URL.
 2. Add a paid item to cart → Pay with Stripe test card `4242 4242 4242 4242`, any future expiry, any CVC.
 3. You should land on `cart.html` with `session_id` in the URL.
 
-## 6) Webhooks (notify you of paid orders)
+## 6) Webhooks (only after a real payment)
 
-1. Stripe Dashboard → **Developers → Webhooks** → Add endpoint:  
+Browsers and carts **do not** hit this URL — only Stripe does, after Checkout succeeds. Subscribe to **`checkout.session.completed`**; the handler also checks **`payment_status === paid`** so unpaid / abandoned checkouts are ignored.
+
+1. Deploy so `api/stripe-webhook.mjs` is live (Edge function — same path: `/api/stripe-webhook`).
+2. Stripe Dashboard → **Developers → Webhooks** → **Add endpoint**:  
    `https://YOUR-PROJECT.vercel.app/api/stripe-webhook`
-2. Event: `checkout.session.completed`.
-3. Production should **verify** the webhook signature (see Stripe docs). The stub in `api/stripe-webhook.js` logs only — extend it to email you (e.g. Resend, SendGrid) or save orders.
+3. Select event: **`checkout.session.completed`**.
+4. Reveal the endpoint **Signing secret** (`whsec_…`) and add it in Vercel:
+
+| Name | Purpose |
+|------|---------|
+| `STRIPE_WEBHOOK_SECRET` | Signing secret from the webhook endpoint (required) |
+
+5. Optional — email yourself via [Resend](https://resend.com):
+
+| Name | Purpose |
+|------|---------|
+| `ORDER_NOTIFY_EMAIL` | Your inbox |
+| `RESEND_API_KEY` | Resend API key |
+| `RESEND_FROM` | Verified sender, e.g. `You <orders@yourdomain.com>` (or Resend’s test sender) |
+
+6. Redeploy after changing env vars. In Stripe → Webhooks → your endpoint, use **Send test webhook** or complete a test checkout; Vercel → Project → **Logs** should show the function run.
+
+**Fallback:** In Stripe you can also turn on **email notifications to your account** for successful payments if you skip Resend.
+
+## 6b) What you receive automatically
+
+- **Webhook email (Resend):** After each paid checkout, the email includes **full line-item specs** decoded from the cart (sizes, qty, deal, **artwork file names** the customer selected on the site — not the binary files).
+- **File uploads:** After payment, Stripe sends the customer back to `cart.html?session_id=…`. They see an **upload form**; files go to `POST /api/submit-order-files`, which checks the session is paid and **emails you the attachments** (same Resend env vars). Limits: 15 files, ~12 MB each (tune in `api/submit-order-files.js` if needed).
+
+Run `npm install` after pulling (adds `busboy` for multipart uploads).
 
 ## 7) Go live
 
