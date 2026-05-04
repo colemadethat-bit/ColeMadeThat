@@ -24,7 +24,7 @@ jobs:
       - name: Assemble static site
         run: |
           mkdir -p _site
-          cp index.html labels.html cart.html stickers.html banners.html packaging.html quote.html _site/
+          cp index.html labels.html cart.html stickers.html banners.html packaging.html quote.html contact.html _site/
           cp -r css js images _site/
           touch _site/.nojekyll
           if [ -f CNAME ]; then cp CNAME _site/; fi

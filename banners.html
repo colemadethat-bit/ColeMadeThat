@@ -34,6 +34,7 @@
           <a href="index.html#portfolio">Portfolio</a>
           <a href="index.html#deals">Deals</a>
           <a href="index.html#faq">FAQ</a>
+          <a class="nav-anchor" href="contact.html">Contact</a>
         </nav>
         <div class="header-actions">
           <a class="nav-cta-header" href="quote.html?product=banners">Get a quote</a>
@@ -54,6 +55,7 @@
         <a href="index.html#portfolio">Portfolio</a>
         <a href="index.html#deals">Deals</a>
         <a href="index.html#faq">FAQ</a>
+        <a class="nav-anchor" href="contact.html">Contact</a>
       </nav>
     </header>
 
@@ -147,18 +149,18 @@
       </section>
     </main>
 
-    <footer class="site-footer site-footer--v3" id="contact">
+    <footer class="site-footer site-footer--v4" id="contact">
       <div class="container">
-        <div class="footer-v3-top">
-          <div class="footer-v3-brand">
+        <div class="footer-v4-top">
+          <div class="footer-v4-brand">
             <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
             <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
               ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
             >
           </div>
-          <div class="footer-v3-col">
-            <h3>Services</h3>
-            <ul>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-svc">Services</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-svc">
               <li><a href="labels.html">Labels</a></li>
               <li><a href="stickers.html">Stickers</a></li>
               <li><a href="banners.html">Banners</a></li>
@@ -166,55 +168,27 @@
               <li><a href="index.html#services">What we print</a></li>
             </ul>
           </div>
-          <div class="footer-v3-col">
-            <h3>About us</h3>
-            <p class="footer-v3-muted">
-              <a href="index.html#why">Why ColeMadeThat</a> — direct communication, fast turnaround, built for growing brands.
-            </p>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-about">About us</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-about">
+              <li><a href="index.html#why">Why ColeMadeThat</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
           </div>
-          <div class="footer-v3-col footer-v3-contact-card">
-            <h3>Contact us</h3>
+          <div class="footer-v4-contact-card">
+            <h3>Contact</h3>
             <p><a href="tel:+12672725446">267-272-5446</a></p>
             <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
             <p class="footer-hours">Business hours: Monday–Friday, 9 a.m.–5 p.m.</p>
-            <a class="btn btn-primary footer-v3-quote-btn" href="quote.html?product=banners">Get a quote</a>
-          </div>
-        </div>
-
-        <div class="footer-v3-bottom">
-          <div class="footer-quick-form footer-v3-form">
-            <h3>Contact us</h3>
-            <p class="footer-v3-lead">Got an idea? Need a quote? Have questions? We’re here to help.</p>
-            <form action="https://formspree.io/f/xzdayagl" method="POST">
-              <input type="hidden" name="_subject" value="Footer contact – ColeMadeThat" />
-              <input type="hidden" name="_next" value="https://www.colemadethat.com/banners.html#contact" />
-              <div class="form-group">
-                <label for="footer-name">Name</label>
-                <input id="footer-name" name="footer_name" type="text" autocomplete="name" placeholder="Your name" />
-              </div>
-              <div class="form-group">
-                <label for="footer-email">Email</label>
-                <input id="footer-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
-              </div>
-              <div class="form-group">
-                <label for="footer-phone">Phone</label>
-                <input id="footer-phone" name="footer_phone" type="tel" autocomplete="tel" placeholder="Phone number" />
-              </div>
-              <div class="form-group">
-                <label for="footer-msg">Comment</label>
-                <textarea id="footer-msg" name="message" placeholder="How can we help?" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%">Send message</button>
-            </form>
-          </div>
-          <div class="footer-v3-aside">
-            <p><a href="index.html#faq">FAQ</a></p>
-            <p><a href="mailto:ColeMadeThat@gmail.com">Email ColeMadeThat@gmail.com</a></p>
+            <p class="footer-v4-quick-links">
+              <a href="contact.html">Contact us</a><span class="footer-dot" aria-hidden="true">·</span><a href="index.html#faq">FAQ</a>
+            </p>
             <p><a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a></p>
             <p><a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a></p>
+            <a class="btn btn-primary footer-v4-quote-btn" href="quote.html?product=banners">Get a quote</a>
           </div>
         </div>
-
         <p class="fine">© ColeMadeThat</p>
       </div>
     </footer>

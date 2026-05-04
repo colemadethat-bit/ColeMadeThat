@@ -3265,33 +3265,57 @@ section.bg-white#services {
   background: #0c0c0e;
 }
 
+/* Contact page */
+.page-contact .contact-page-hero {
+  background: var(--accent);
+  color: #fff;
+  padding: clamp(2.5rem, 6vw, 3.75rem) 0;
+  text-align: center;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.12);
+}
+
+.page-contact .contact-page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+  color: #fff !important;
+  text-transform: none;
+}
+
+.page-contact .contact-page-hero-lead {
+  margin: 0 auto;
+  max-width: 36rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.page-contact .contact-page-form-section {
+  padding: 2.5rem 0 3rem;
+}
+
+.page-contact .contact-page-form {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
 .quote-hero-full {
   position: relative;
   padding: clamp(2.75rem, 8vw, 4.5rem) 0 clamp(2rem, 5vw, 3rem);
   overflow: hidden;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
 }
 
 .quote-hero-full-bg {
   position: absolute;
   inset: 0;
-  background-color: #141218;
-  background-image: url("../images/quote-hero.jpg"), url("../images/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--accent);
+  background-image: none;
 }
 
 .quote-hero-full-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    115deg,
-    rgba(12, 12, 14, 0.92) 0%,
-    rgba(12, 12, 14, 0.72) 45%,
-    rgba(12, 12, 14, 0.55) 100%
-  );
-  pointer-events: none;
+  display: none;
 }
 
 .quote-hero-full-inner {
@@ -3407,6 +3431,17 @@ section.bg-white#services {
   color: #cbd5e1;
 }
 
+.quote-form-dark-wrap .form-row-2 {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 520px) {
+  .quote-form-dark-wrap .form-row-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .quote-form-dark-wrap .shop-field label,
 .quote-form-dark-wrap .shop-label {
   color: #9ca3af;
@@ -3415,6 +3450,7 @@ section.bg-white#services {
 .quote-form-dark-wrap .shop-opts input[type="text"],
 .quote-form-dark-wrap .shop-opts select,
 .quote-form-dark-wrap .form-group input,
+.quote-form-dark-wrap .form-group select,
 .quote-form-dark-wrap .form-group textarea {
   background: #141418 !important;
   border: 2px solid rgba(255, 136, 0, 0.22) !important;
@@ -3656,6 +3692,173 @@ section.bg-white#services {
 
 .footer-v3-aside a:hover {
   color: var(--accent);
+}
+
+/* —— Footer v4 (dropdowns, contact column — no inline form) —— */
+.site-footer--v4 .footer-v4-top {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 900px) {
+  .site-footer--v4 .footer-v4-top {
+    grid-template-columns: 1.1fr 1fr 1fr 1.2fr;
+    align-items: start;
+    gap: 1.5rem;
+  }
+}
+
+.footer-v4-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-v4-brand .logo-footer {
+  font-size: 1.35rem;
+}
+
+.footer-dropdown {
+  position: relative;
+}
+
+.footer-dropdown-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #e5e7eb;
+  cursor: default;
+}
+
+.footer-dropdown-label::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+@media (max-width: 899px) {
+  .footer-dropdown-label::after {
+    display: none;
+  }
+}
+
+.footer-dropdown-menu {
+  margin: 0.35rem 0 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  min-width: 11rem;
+}
+
+.footer-dropdown-menu a {
+  display: block;
+  padding: 0.35rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.footer-dropdown-menu a:hover,
+.footer-dropdown-menu a:focus-visible {
+  color: var(--accent);
+}
+
+@media (min-width: 900px) {
+  .footer-dropdown {
+    padding-top: 0.25rem;
+  }
+
+  .footer-dropdown-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin: 0 0 0.35rem;
+    padding: 0.4rem 0;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 -10px 32px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+    z-index: 400;
+  }
+
+  .footer-dropdown-menu li:first-child a {
+    padding-top: 0.45rem;
+  }
+
+  .footer-dropdown-menu li:last-child a {
+    padding-bottom: 0.45rem;
+  }
+
+  .footer-dropdown-menu a {
+    padding: 0.45rem 1rem;
+  }
+
+  .footer-dropdown:hover .footer-dropdown-menu,
+  .footer-dropdown:focus-within .footer-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Static labels on desktop: list hidden until hover — extra bridge */
+  .footer-dropdown::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 0.75rem;
+  }
+}
+
+.footer-v4-contact-card h3 {
+  margin-top: 0;
+}
+
+.footer-v4-quick-links {
+  font-size: 0.9rem;
+  margin: 0.65rem 0 !important;
+}
+
+.footer-v4-quick-links a {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.footer-v4-quick-links a:hover {
+  color: var(--accent);
+}
+
+.footer-dot {
+  margin: 0 0.35rem;
+  opacity: 0.5;
+}
+
+.footer-v4-contact-card p {
+  margin: 0 0 0.45rem;
+  font-size: 0.92rem;
+}
+
+.footer-v4-quote-btn {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  max-width: 220px;
+  margin-top: 0.75rem;
 }
 
 /* —— Quote: “Start your project” image strip —— */

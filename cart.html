@@ -26,6 +26,7 @@
           <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
           <a class="nav-anchor" href="index.html#deals">Deals</a>
           <a class="nav-anchor" href="index.html#faq">FAQ</a>
+          <a class="nav-anchor" href="contact.html">Contact</a>
         </nav>
         <div class="header-actions">
           <a class="nav-cart nav-cart-icon" href="cart.html" aria-label="Shopping cart">
@@ -50,6 +51,7 @@
         <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
         <a class="nav-anchor" href="index.html#deals">Deals</a>
         <a class="nav-anchor" href="index.html#faq">FAQ</a>
+        <a class="nav-anchor" href="contact.html">Contact</a>
       </nav>
     </header>
 
@@ -171,44 +173,48 @@
       </section>
     </main>
 
-    <footer class="site-footer" id="contact">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
-          <div>
+    <footer class="site-footer site-footer--v4" id="contact">
+      <div class="container">
+        <div class="footer-v4-top">
+          <div class="footer-v4-brand">
+            <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
             <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
               ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
             >
-            <p>Premium custom labels, stickers, packaging &amp; design for growing brands.</p>
+          </div>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-svc-cart">Services</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-svc-cart">
+              <li><a href="labels.html">Labels</a></li>
+              <li><a href="stickers.html">Stickers</a></li>
+              <li><a href="banners.html">Banners</a></li>
+              <li><a href="packaging.html">Packaging</a></li>
+              <li><a href="index.html#services">What we print</a></li>
+            </ul>
+          </div>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-about-cart">About us</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-about-cart">
+              <li><a href="index.html#why">Why ColeMadeThat</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-v4-contact-card">
+            <h3>Contact</h3>
+            <p><a href="tel:+12672725446">267-272-5446</a></p>
+            <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
+            <p class="footer-hours">Business hours: Monday–Friday, 9 a.m.–5 p.m.</p>
+            <p class="footer-v4-quick-links">
+              <a href="contact.html">Contact us</a><span class="footer-dot" aria-hidden="true">·</span><a href="index.html#faq">FAQ</a>
+            </p>
+            <p><a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a></p>
+            <p><a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a></p>
+            <a class="btn btn-primary footer-v4-quote-btn" href="quote.html">Get a quote</a>
           </div>
         </div>
-        <div class="footer-col">
-          <h3>Quick links</h3>
-          <ul>
-            <li><a href="index.html#top">Home</a></li>
-            <li><a href="index.html#services">Shop</a></li>
-            <li><a href="index.html#why">Why us</a></li>
-            <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li><a href="index.html#deals">Deals</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col footer-contact">
-          <h3>Get in touch</h3>
-          <p>Serving local &amp; growing brands · Est. 2025</p>
-          <p>Fast 1–3 day turnaround · Bulk pricing · Direct communication</p>
-          <div class="footer-cta">
-            <a class="btn btn-primary" href="index.html#services">Shop categories</a>
-          </div>
-          <p style="margin-top: 1rem">
-            <a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a><br />
-            <a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a><br />
-            <a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a><br />
-            <a href="tel:+12672725446">267-272-5446</a>
-          </p>
-        </div>
+        <p class="fine">© ColeMadeThat</p>
       </div>
-      <p class="fine">© ColeMadeThat</p>
     </footer>
 
     <!-- Inline URL so checkout works even if js/site-config.js is cached, 404, or slow to update on GitHub Pages -->

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us | ColeMadeThat</title>
+    <meta
+      name="description"
+      content="Contact ColeMadeThat — questions, quotes, and project ideas. We respond fast during business hours."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="page-contact">
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html#top" class="logo" aria-label="ColeMadeThat home">
+          <img class="logo-img" src="images/logo.jpg" alt="" width="44" height="44" />
+          <span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span>
+        </a>
+        <nav class="nav-desktop" aria-label="Main">
+          <div class="nav-dropdown">
+            <a class="nav-anchor" href="index.html#services">Services</a>
+            <ul class="nav-dropdown-menu" role="menu" aria-label="Services">
+              <li role="none"><a href="labels.html" role="menuitem">Labels</a></li>
+              <li role="none"><a href="stickers.html" role="menuitem">Stickers</a></li>
+              <li role="none"><a href="banners.html" role="menuitem">Banners</a></li>
+              <li role="none"><a href="packaging.html" role="menuitem">Packaging</a></li>
+            </ul>
+          </div>
+          <a class="nav-anchor" href="index.html#why">Why us</a>
+          <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
+          <a class="nav-anchor" href="index.html#deals">Deals</a>
+          <a class="nav-anchor" href="index.html#faq">FAQ</a>
+          <a class="nav-anchor" href="contact.html" aria-current="page">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="nav-cta-header" href="quote.html">Get a quote</a>
+          <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+        <a href="quote.html">Get a quote</a>
+        <a href="index.html#services">Services</a>
+        <a href="labels.html" class="nav-mobile-services">Labels</a>
+        <a href="stickers.html" class="nav-mobile-services">Stickers</a>
+        <a href="banners.html" class="nav-mobile-services">Banners</a>
+        <a href="packaging.html" class="nav-mobile-services">Packaging</a>
+        <a class="nav-anchor" href="index.html#top">Home</a>
+        <a class="nav-anchor" href="index.html#why">Why us</a>
+        <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
+        <a class="nav-anchor" href="index.html#deals">Deals</a>
+        <a class="nav-anchor" href="index.html#faq">FAQ</a>
+        <a class="nav-anchor" href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="contact-page-hero" aria-labelledby="contact-hero-title">
+        <div class="container">
+          <h1 id="contact-hero-title" class="contact-page-hero-title">Contact us</h1>
+          <p class="contact-page-hero-lead">
+            Got an idea? Need a quote? Have questions? We’re here to help — send a message and we’ll get back to you.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-surface contact-page-form-section" id="contact">
+        <div class="container container-narrow">
+          <form class="contact-page-form" action="https://formspree.io/f/xzdayagl" method="POST">
+            <input type="hidden" name="_subject" value="Contact page – ColeMadeThat" />
+            <input type="hidden" name="_next" value="https://www.colemadethat.com/contact.html#thanks" />
+            <div class="form-group">
+              <label for="contact-name">Name *</label>
+              <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email *</label>
+              <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone *</label>
+              <input id="contact-phone" name="phone" type="tel" required autocomplete="tel" placeholder="Your phone number" />
+            </div>
+            <div class="form-group">
+              <label for="contact-msg">Comment *</label>
+              <textarea id="contact-msg" name="message" required rows="5" placeholder="How can we help?"></textarea>
+            </div>
+            <p id="thanks" class="form-hint contact-thanks-msg" style="display: none; color: var(--accent); font-weight: 600">
+              Thanks — your message was sent. We’ll be in touch shortly.
+            </p>
+            <button type="submit" class="btn btn-primary" style="width: 100%">Send message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--v4" id="contact-footer">
+      <div class="container">
+        <div class="footer-v4-top">
+          <div class="footer-v4-brand">
+            <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
+            <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
+              ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
+            >
+          </div>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-svc-c">Services</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-svc-c">
+              <li><a href="labels.html">Labels</a></li>
+              <li><a href="stickers.html">Stickers</a></li>
+              <li><a href="banners.html">Banners</a></li>
+              <li><a href="packaging.html">Packaging</a></li>
+              <li><a href="index.html#services">What we print</a></li>
+            </ul>
+          </div>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-about-c">About us</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-about-c">
+              <li><a href="index.html#why">Why ColeMadeThat</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-v4-contact-card">
+            <h3>Contact</h3>
+            <p><a href="tel:+12672725446">267-272-5446</a></p>
+            <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
+            <p class="footer-hours">Business hours: Monday–Friday, 9 a.m.–5 p.m.</p>
+            <p class="footer-v4-quick-links">
+              <a href="contact.html">Contact us</a><span class="footer-dot" aria-hidden="true">·</span><a href="index.html#faq">FAQ</a>
+            </p>
+            <p><a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a></p>
+            <p><a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a></p>
+            <a class="btn btn-primary footer-v4-quote-btn" href="quote.html">Get a quote</a>
+          </div>
+        </div>
+        <p class="fine">© ColeMadeThat</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script>
+      if (window.location.hash === "#thanks") {
+        var el = document.getElementById("thanks");
+        if (el) el.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

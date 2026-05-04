@@ -37,6 +37,7 @@
           <a href="index.html#portfolio">Portfolio</a>
           <a href="index.html#deals">Deals</a>
           <a href="index.html#faq">FAQ</a>
+          <a class="nav-anchor" href="contact.html">Contact</a>
         </nav>
         <div class="header-actions">
           <a class="nav-cta-header" href="quote.html" aria-current="page">Get a quote</a>
@@ -57,6 +58,7 @@
         <a href="index.html#portfolio">Portfolio</a>
         <a href="index.html#deals">Deals</a>
         <a href="index.html#faq">FAQ</a>
+        <a class="nav-anchor" href="contact.html">Contact</a>
       </nav>
     </header>
 
@@ -65,7 +67,6 @@
         <div class="quote-hero-full-bg" aria-hidden="true"></div>
         <div class="quote-hero-full-overlay" aria-hidden="true"></div>
         <div class="container quote-hero-full-inner">
-          <p class="section-label" style="color: var(--accent); margin-bottom: 0.5rem">— <span class="accent-word">Quote</span></p>
           <h1 id="quote-hero-title" class="services-headline">Start your custom quote</h1>
           <p class="lead">
             Get a fast quote for labels, stickers, banners, packaging, and more. Your request is emailed to us — we follow up
@@ -337,19 +338,53 @@
               </div>
 
               <hr class="form-divider" style="margin: 1.5rem 0" />
-              <p class="form-hint" style="margin: 0 0 1rem; font-weight: 600; color: var(--accent)">2 · Your contact info</p>
+              <p class="form-hint" style="margin: 0 0 1rem; font-weight: 600; color: var(--accent)">2 · Your details</p>
 
               <div class="form-group">
-                <label for="q-name">Name *</label>
-                <input id="q-name" name="name" type="text" required autocomplete="name" placeholder="Your name" />
+                <label for="q-business">Business name *</label>
+                <input id="q-business" name="business_name" type="text" required autocomplete="organization" placeholder="Business or brand name" />
+              </div>
+              <div class="form-group form-row-2">
+                <div>
+                  <label for="q-first">First name *</label>
+                  <input id="q-first" name="first_name" type="text" required autocomplete="given-name" placeholder="First name" />
+                </div>
+                <div>
+                  <label for="q-last">Last name *</label>
+                  <input id="q-last" name="last_name" type="text" required autocomplete="family-name" placeholder="Last name" />
+                </div>
               </div>
               <div class="form-group">
                 <label for="q-email">Email *</label>
                 <input id="q-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
               </div>
               <div class="form-group">
-                <label for="q-phone">Phone</label>
-                <input id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" />
+                <label for="q-phone">Phone *</label>
+                <input id="q-phone" name="phone" type="tel" required autocomplete="tel" placeholder="Your phone number" />
+              </div>
+              <div class="form-group">
+                <label for="q-address">Street address *</label>
+                <input id="q-address" name="address_line" type="text" required autocomplete="street-address" placeholder="Street address" />
+              </div>
+              <div class="form-group form-row-2">
+                <div>
+                  <label for="q-city">City *</label>
+                  <input id="q-city" name="city" type="text" required autocomplete="address-level2" placeholder="City" />
+                </div>
+                <div>
+                  <label for="q-state">State / province *</label>
+                  <input id="q-state" name="state_region" type="text" required autocomplete="address-level1" placeholder="State or province" />
+                </div>
+              </div>
+              <div class="form-group form-row-2">
+                <div>
+                  <label for="q-postal">Postal / ZIP code *</label>
+                  <input id="q-postal" name="postal_code" type="text" required autocomplete="postal-code" placeholder="ZIP or postal code" />
+                </div>
+                <div>
+                  <label for="q-country">Country *</label>
+                  <input id="q-country" name="country" type="text" required autocomplete="country-name" placeholder="Country" value="United States" />
+                </div>
               </div>
 
               <p class="quote-artwork-note">
@@ -359,8 +394,19 @@
               </p>
 
               <div class="form-group">
-                <label for="q-notes">Additional notes</label>
-                <textarea id="q-notes" name="notes" rows="4" placeholder="Timeline, finishing, shipping…"></textarea>
+                <label for="q-notes">Additional details</label>
+                <textarea id="q-notes" name="additional_details" rows="4" placeholder="Timeline, finishing, shipping, special requests…"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="q-hear">How did you hear about us?</label>
+                <select id="q-hear" name="hear_about_us">
+                  <option value="">Optional</option>
+                  <option value="Google">Google</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="Recommended by someone">Recommended by someone</option>
+                </select>
               </div>
 
               <p class="quote-submit-note">
@@ -379,18 +425,18 @@
       </section>
     </main>
 
-    <footer class="site-footer site-footer--v3" id="contact">
+    <footer class="site-footer site-footer--v4" id="contact">
       <div class="container">
-        <div class="footer-v3-top">
-          <div class="footer-v3-brand">
+        <div class="footer-v4-top">
+          <div class="footer-v4-brand">
             <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
             <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
               ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
             >
           </div>
-          <div class="footer-v3-col">
-            <h3>Services</h3>
-            <ul>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-svc-q">Services</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-svc-q">
               <li><a href="labels.html">Labels</a></li>
               <li><a href="stickers.html">Stickers</a></li>
               <li><a href="banners.html">Banners</a></li>
@@ -398,55 +444,27 @@
               <li><a href="index.html#services">What we print</a></li>
             </ul>
           </div>
-          <div class="footer-v3-col">
-            <h3>About us</h3>
-            <p class="footer-v3-muted">
-              <a href="index.html#why">Why ColeMadeThat</a> — direct communication, fast turnaround, built for growing brands.
-            </p>
+          <div class="footer-dropdown" tabindex="0">
+            <span class="footer-dropdown-label" id="foot-dd-about-q">About us</span>
+            <ul class="footer-dropdown-menu" aria-labelledby="foot-dd-about-q">
+              <li><a href="index.html#why">Why ColeMadeThat</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
           </div>
-          <div class="footer-v3-col footer-v3-contact-card">
-            <h3>Contact us</h3>
+          <div class="footer-v4-contact-card">
+            <h3>Contact</h3>
             <p><a href="tel:+12672725446">267-272-5446</a></p>
             <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
             <p class="footer-hours">Business hours: Monday–Friday, 9 a.m.–5 p.m.</p>
-            <a class="btn btn-primary footer-v3-quote-btn" href="quote.html">Get a quote</a>
-          </div>
-        </div>
-
-        <div class="footer-v3-bottom">
-          <div class="footer-quick-form footer-v3-form">
-            <h3>Contact us</h3>
-            <p class="footer-v3-lead">Got an idea? Need a quote? Have questions? We’re here to help.</p>
-            <form action="https://formspree.io/f/xzdayagl" method="POST">
-              <input type="hidden" name="_subject" value="Footer contact – ColeMadeThat" />
-              <input type="hidden" name="_next" value="https://www.colemadethat.com/quote.html#contact" />
-              <div class="form-group">
-                <label for="footer-name">Name</label>
-                <input id="footer-name" name="footer_name" type="text" autocomplete="name" placeholder="Your name" />
-              </div>
-              <div class="form-group">
-                <label for="footer-email">Email</label>
-                <input id="footer-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
-              </div>
-              <div class="form-group">
-                <label for="footer-phone">Phone</label>
-                <input id="footer-phone" name="footer_phone" type="tel" autocomplete="tel" placeholder="Phone number" />
-              </div>
-              <div class="form-group">
-                <label for="footer-msg">Comment</label>
-                <textarea id="footer-msg" name="message" placeholder="How can we help?" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%">Send message</button>
-            </form>
-          </div>
-          <div class="footer-v3-aside">
-            <p><a href="index.html#faq">FAQ</a></p>
-            <p><a href="mailto:ColeMadeThat@gmail.com">Email ColeMadeThat@gmail.com</a></p>
+            <p class="footer-v4-quick-links">
+              <a href="contact.html">Contact us</a><span class="footer-dot" aria-hidden="true">·</span><a href="index.html#faq">FAQ</a>
+            </p>
             <p><a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a></p>
             <p><a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a></p>
+            <a class="btn btn-primary footer-v4-quote-btn" href="quote.html">Get a quote</a>
           </div>
         </div>
-
         <p class="fine">© ColeMadeThat</p>
       </div>
     </footer>
