@@ -1,38 +1,43 @@
-ColeMadeThat — drop image files here using the names below (paths are relative to this folder).
+ColeMadeThat — drop image files here (paths are relative to this folder).
 
-SITE / BRANDING
-  logo.jpg              — Header & footer logo (square works best; ~512px+)
-  hero.jpg              — Full-width homepage hero background (wide photo)
+BRANDING / GLOBAL
+  logo.jpg             — Header & footer (square ~512px+ works well)
 
-SHOP BY CATEGORY (homepage grid — “Shop by category”)
-  cat-labels.jpg        — Labels tile (SBC labels)
-  cat-stickers.jpg      — Stickers tile (SBC stickers)
-  cat-banners.jpg       — Banners tile (SBC banners)
-  cat-design.jpg        — Design tile (SBC design)
-  cat-packaging.jpg     — Packaging tile (SBC packaging)
+HOME — HERO (behind headline + optional video)
+  hero.jpg             — Still photo used as poster & fallback (wide/large)
+  hero.mp4             — Optional looping background video (muted autoplay)
+  hero.webm            — Optional second format for broader browser support
 
-PRODUCT / SHOP PAGES (hero + cart thumbnail)
-  labels-hero.jpg       — Sheet labels page hero
-  labels-thumb.jpg      — Small thumb for cart line (labels)
-  stickers-hero.jpg     — Stickers page hero
-  stickers-thumb.jpg    — Cart thumb (stickers)
-  banners-hero.jpg      — Banners page hero
-  banners-thumb.jpg     — Cart thumb (banners)
-  design-hero.jpg       — Design page hero
-  design-thumb.jpg      — Cart thumb (design)
-  packaging-hero.jpg    — Packaging page hero
-  packaging-thumb.jpg   — Cart thumb (packaging)
+QUOTE PAGE — TOP BANNER (full-width behind “Start your custom quote”)
+  quote-hero.jpg       — Prefer wide hero just for the quote page (optional).
+                         If missing, the CSS falls back to hero.jpg automatically.
 
-PORTFOLIO SAMPLES (homepage “Portfolio” — product examples)
-  work-1.jpg … work-6.jpg  — PS1–PS6 style samples (dispensary, food, etc.)
+HOME — SERVICE TILES (“What we print” grid)
+  cat-labels.jpg       — Labels
+  cat-stickers.jpg     — Stickers
+  cat-banners.jpg      — Banners
+  cat-packaging.jpg    — Packaging
+
+PRODUCT PAGES — TOP OF EACH PAGE
+  labels-hero.jpg      — Labels page hero
+  stickers-hero.jpg    — Stickers page hero
+  banners-hero.jpg     — Banners page hero
+  packaging-hero.jpg   — Packaging page hero
+
+OPTIONAL PAGE-SPECIFIC GALLERIES (see each HTML file for exact filenames)
+  labels-port-*.jpg, stickers-port-*.jpg, banners-port-*.jpg, packaging-port-*.jpg
+  labels-more-*.jpg, etc.
+
+HOME — PORTFOLIO SECTION
+  work-1.jpg … work-6.jpg
 
 DEALS SECTION
-  deal-1.jpg            — Starter: 100 × 5″ labels ($60)
-  deal-2.jpg            — Growth: 500 × 2″ labels ($175)
-  deal-3.jpg            — Welcome: first-time 10% off
+  deal-1.jpg           — Starter deal image
+  deal-2.jpg             — Growth deal image
 
-Optional naming (if you prefer prefixes): same files, you can use names like
-  cmt-logo.jpg → save as logo.jpg, or change paths in HTML to match.
-
-Brand carousel placeholders are text until you replace with real logos (add logo
-files and wire <img> tags in index.html brand items if needed).
+WHERE THINGS SHOW UP (quick map)
+  • Logo → top-left header every page; also above “ColeMadeThat” in the new footer.
+  • Category images → only the four tiles under “What we print” on the home page.
+  • Portfolio shots → “Product samples” section on the home page (work-*.jpg).
+  • Hero still/video → only the large area behind the main headline on the home page.
+  • quote-hero.jpg → only the dark banner behind “Start your custom quote” on quote.html.

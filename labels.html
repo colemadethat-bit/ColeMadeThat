@@ -21,7 +21,15 @@
           <span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span>
         </a>
         <nav class="nav-desktop" aria-label="Main">
-          <a href="index.html#services">Categories</a>
+          <div class="nav-dropdown">
+            <a href="index.html#services">Services</a>
+            <ul class="nav-dropdown-menu" role="menu" aria-label="Services">
+              <li role="none"><a href="labels.html" role="menuitem">Labels</a></li>
+              <li role="none"><a href="stickers.html" role="menuitem">Stickers</a></li>
+              <li role="none"><a href="banners.html" role="menuitem">Banners</a></li>
+              <li role="none"><a href="packaging.html" role="menuitem">Packaging</a></li>
+            </ul>
+          </div>
           <a href="index.html#why">Why us</a>
           <a href="index.html#portfolio">Portfolio</a>
           <a href="index.html#deals">Deals</a>
@@ -36,7 +44,11 @@
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
         <a href="quote.html">Get a quote</a>
-        <a href="index.html#services">Categories</a>
+        <a href="index.html#services">Services</a>
+        <a href="labels.html" class="nav-mobile-services">Labels</a>
+        <a href="stickers.html" class="nav-mobile-services">Stickers</a>
+        <a href="banners.html" class="nav-mobile-services">Banners</a>
+        <a href="packaging.html" class="nav-mobile-services">Packaging</a>
         <a href="index.html#top">Home</a>
         <a href="index.html#why">Why us</a>
         <a href="index.html#portfolio">Portfolio</a>
@@ -48,7 +60,7 @@
     <main>
       <section class="bg-surface shop-page shop-page-tight">
         <div class="container">
-          <p class="shop-breadcrumb"><a href="index.html">Home</a> · <a href="index.html#services">Categories</a> · Labels</p>
+          <p class="shop-breadcrumb"><a href="index.html">Home</a> · <a href="index.html#services">Services</a> · Labels</p>
 
           <div class="shop-hero">
             <div class="shop-hero-text">
@@ -141,35 +153,81 @@
       </section>
     </main>
 
-    <footer class="site-footer" id="contact">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
-          <div>
-            <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
-              ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
-            >
-            <p>Premium custom labels, stickers, banners &amp; packaging for growing brands.</p>
+    <footer class="site-footer site-footer--extended" id="contact">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-brand-simple footer-brand">
+            <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
+            <div>
+              <a href="index.html#top" class="logo logo-footer" style="display: inline-flex"
+                ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="labels.html">Labels</a></li>
+              <li><a href="stickers.html">Stickers</a></li>
+              <li><a href="banners.html">Banners</a></li>
+              <li><a href="packaging.html">Packaging</a></li>
+              <li><a href="index.html#services">What we print</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="index.html#why">About us</a></li>
+              <li><a href="mailto:ColeMadeThat@gmail.com">Contact us</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-col">
-          <h3>Quick links</h3>
-          <ul>
-            <li><a href="index.html#top">Home</a></li>
-            <li><a href="quote.html">Get a quote</a></li>
-            <li><a href="index.html#services">Categories</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col footer-contact">
-          <h3>Get in touch</h3>
-          <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a> · <a href="tel:+12672725446">267-272-5446</a></p>
-          <div class="footer-cta">
-            <a class="btn btn-primary" href="quote.html?product=labels">Get a quote</a>
+
+        <div class="footer-mid-grid">
+          <div class="footer-quick-form">
+            <h3>Got an idea? Need a quote? Have questions?</h3>
+            <p class="lead" style="font-size: 0.95rem; color: #9ca3af; margin: 0 0 1rem">
+              We’re here to help — send a quick note and we’ll get back to you.
+            </p>
+            <form action="https://formspree.io/f/xzdayagl" method="POST">
+              <input type="hidden" name="_subject" value="Footer contact – ColeMadeThat" />
+              <input type="hidden" name="_next" value="https://www.colemadethat.com/labels.html#contact" />
+              <div class="form-group">
+                <label for="footer-name">Name</label>
+                <input id="footer-name" name="footer_name" type="text" autocomplete="name" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="footer-email">Email</label>
+                <input id="footer-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
+              </div>
+              <div class="form-group">
+                <label for="footer-phone">Phone</label>
+                <input id="footer-phone" name="footer_phone" type="tel" autocomplete="tel" placeholder="Optional" />
+              </div>
+              <div class="form-group">
+                <label for="footer-msg">Comment</label>
+                <textarea id="footer-msg" name="message" placeholder="How can we help?" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%">Send message</button>
+            </form>
+          </div>
+          <div class="footer-contact-stack footer-contact">
+            <h3>Get in touch</h3>
+            <p>
+              <a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a>
+            </p>
+            <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
+            <p><a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a></p>
+            <p><a href="tel:+12672725446">267-272-5446</a></p>
+            <div class="footer-cta">
+              <a class="btn btn-primary" href="quote.html?product=labels">Get a quote</a>
+            </div>
           </div>
         </div>
+
+        <p class="fine">© ColeMadeThat</p>
       </div>
-      <p class="fine">© ColeMadeThat</p>
     </footer>
 
     <script src="js/main.js" defer></script>

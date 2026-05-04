@@ -27,7 +27,15 @@
           <span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span>
         </a>
         <nav class="nav-desktop" aria-label="Main">
-          <a class="nav-anchor" href="#services">Categories</a>
+          <div class="nav-dropdown">
+            <a class="nav-anchor nav-dropdown-trigger" href="#services">Services</a>
+            <ul class="nav-dropdown-menu" role="menu" aria-label="Services">
+              <li role="none"><a href="labels.html" role="menuitem">Labels</a></li>
+              <li role="none"><a href="stickers.html" role="menuitem">Stickers</a></li>
+              <li role="none"><a href="banners.html" role="menuitem">Banners</a></li>
+              <li role="none"><a href="packaging.html" role="menuitem">Packaging</a></li>
+            </ul>
+          </div>
           <a class="nav-anchor" href="#why">Why us</a>
           <a class="nav-anchor" href="#portfolio">Portfolio</a>
           <a class="nav-anchor" href="#deals">Deals</a>
@@ -42,7 +50,11 @@
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
         <a href="quote.html">Get a quote</a>
-        <a href="#services">Categories</a>
+        <a class="nav-anchor" href="#services">Services</a>
+        <a href="labels.html" class="nav-mobile-services">Labels</a>
+        <a href="stickers.html" class="nav-mobile-services">Stickers</a>
+        <a href="banners.html" class="nav-mobile-services">Banners</a>
+        <a href="packaging.html" class="nav-mobile-services">Packaging</a>
         <a href="#top">Home</a>
         <a class="nav-anchor" href="#why">Why us</a>
         <a class="nav-anchor" href="#portfolio">Portfolio</a>
@@ -340,7 +352,7 @@
                 </div>
                 <p class="deal-name">Starter</p>
                 <p class="lead">Great for testing a new product or a small batch.</p>
-                <a class="btn btn-deal deal-cta" href="quote.html?deal=deal1">Ask for quote for deal</a>
+                <a class="btn btn-deal deal-cta" href="quote.html?deal=deal1">Ask for starter deal quote</a>
               </div>
             </article>
             <article class="deal-card">
@@ -355,7 +367,7 @@
                 </div>
                 <p class="deal-name">Growth</p>
                 <p class="lead">Better per-unit cost for brands moving volume.</p>
-                <a class="btn btn-deal deal-cta" href="quote.html?deal=deal2">Ask for quote for deal</a>
+                <a class="btn btn-deal deal-cta" href="quote.html?deal=deal2">Ask for growth deal quote</a>
               </div>
             </article>
           </div>
@@ -400,8 +412,8 @@
           </div>
           <div class="form-card">
             <p class="lead" style="margin-top: 0">
-              Start your project on the quote page — choose labels, stickers, banners, or packaging, add sizes and quantity,
-              and attach files if you have them.
+              Start your project on the quote page — choose labels, stickers, banners, or packaging and add sizes and quantity.
+              Email print-ready artwork to us separately if needed.
             </p>
             <p class="form-hint" style="margin: 0 0 1.25rem">
               Artwork can also be emailed to <a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a>.
@@ -429,7 +441,7 @@
                 <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
               </button>
               <div class="faq-panel">
-                Most orders are ready in 1–3 business days after proof approval. Rush may be available — note it in your
+                Most orders are ready in 3–5 business days after proof approval. Rush may be available — note it in your
                 quote request.
               </div>
             </div>
@@ -439,7 +451,7 @@
                 <span class="faq-toggle-icon" aria-hidden="true"><span class="faq-icon-plus">+</span><span class="faq-icon-minus">−</span></span>
               </button>
               <div class="faq-panel">
-                No. Send print-ready files, sketches, or nothing — we offer design help and proofs before we print.
+                No — send print-ready files or sketches, or start from scratch. We often help with design and proofs before we print.
               </div>
             </div>
             <div class="faq-item">
@@ -496,45 +508,81 @@
       </section>
     </main>
 
-    <footer class="site-footer" id="contact">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
-          <div>
-            <a href="#top" class="logo logo-footer" style="display: inline-flex"
-              ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
-            >
-            <p>Premium custom labels, stickers, banners &amp; packaging for growing brands.</p>
+    <footer class="site-footer site-footer--extended" id="contact">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-brand-simple footer-brand">
+            <img class="logo-img" src="images/logo.jpg" alt="" width="48" height="48" />
+            <div>
+              <a href="#top" class="logo logo-footer" style="display: inline-flex"
+                ><span><span class="logo-cap">C</span>ole<span class="logo-cap">M</span>ade<span class="logo-cap">T</span>hat</span></a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="labels.html">Labels</a></li>
+              <li><a href="stickers.html">Stickers</a></li>
+              <li><a href="banners.html">Banners</a></li>
+              <li><a href="packaging.html">Packaging</a></li>
+              <li><a href="#services">What we print</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#why">About us</a></li>
+              <li><a href="mailto:ColeMadeThat@gmail.com">Contact us</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-col">
-          <h3>Quick links</h3>
-          <ul>
-            <li><a href="#top">Home</a></li>
-            <li><a href="quote.html">Get a quote</a></li>
-            <li><a href="#services">Categories</a></li>
-            <li><a href="#why">Why us</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#deals">Deals</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-col footer-contact">
-          <h3>Get in touch</h3>
-          <p>Serving local &amp; growing brands · Est. 2025</p>
-          <p>Fast 1–3 day turnaround · Bulk pricing · Direct communication</p>
-          <div class="footer-cta">
-            <a class="btn btn-primary" href="quote.html">Get a quote</a>
+
+        <div class="footer-mid-grid">
+          <div class="footer-quick-form">
+            <h3>Got an idea? Need a quote? Have questions?</h3>
+            <p class="lead" style="font-size: 0.95rem; color: #9ca3af; margin: 0 0 1rem">
+              We’re here to help — send a quick note and we’ll get back to you.
+            </p>
+            <form action="https://formspree.io/f/xzdayagl" method="POST">
+              <input type="hidden" name="_subject" value="Footer contact – ColeMadeThat" />
+              <input type="hidden" name="_next" value="https://www.colemadethat.com/#contact" />
+              <div class="form-group">
+                <label for="footer-name">Name</label>
+                <input id="footer-name" name="footer_name" type="text" autocomplete="name" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="footer-email">Email</label>
+                <input id="footer-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
+              </div>
+              <div class="form-group">
+                <label for="footer-phone">Phone</label>
+                <input id="footer-phone" name="footer_phone" type="tel" autocomplete="tel" placeholder="Optional" />
+              </div>
+              <div class="form-group">
+                <label for="footer-msg">Comment</label>
+                <textarea id="footer-msg" name="message" placeholder="How can we help?" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%">Send message</button>
+            </form>
           </div>
-          <p style="margin-top: 1rem">
-            <a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a><br />
-            <a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a><br />
-            <a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a><br />
-            <a href="tel:+12672725446">267-272-5446</a>
-          </p>
+          <div class="footer-contact-stack footer-contact">
+            <h3>Get in touch</h3>
+            <p>
+              <a href="https://colemadethat.com" target="_blank" rel="noopener">colemadethat.com</a>
+            </p>
+            <p><a href="mailto:ColeMadeThat@gmail.com">ColeMadeThat@gmail.com</a></p>
+            <p><a href="https://instagram.com/ColeMadeThat" target="_blank" rel="noopener">Instagram @ColeMadeThat</a></p>
+            <p><a href="tel:+12672725446">267-272-5446</a></p>
+            <div class="footer-cta">
+              <a class="btn btn-primary" href="quote.html">Get a quote</a>
+            </div>
+          </div>
         </div>
+
+        <p class="fine">© ColeMadeThat</p>
       </div>
-      <p class="fine">© ColeMadeThat</p>
     </footer>
 
     <script src="js/anchor-scroll.js" defer></script>

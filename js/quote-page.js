@@ -103,20 +103,59 @@
       n = Math.max(min, n);
       inp.value = String(n);
     }
-    if (minus && inp) {
-      minus.addEventListener("click", function () {
-        var n = parseInt(inp.value, 10);
-        if (!isFinite(n)) n = min;
-        inp.value = String(Math.max(min, n - 1));
-      });
+    function stepDown() {
+      if (!inp) return;
+      var n = parseInt(inp.value, 10);
+      if (!isFinite(n)) n = min;
+      inp.value = String(Math.max(min, n - 1));
     }
-    if (plus && inp) {
-      plus.addEventListener("click", function () {
-        var n = parseInt(inp.value, 10);
-        if (!isFinite(n)) n = min;
-        inp.value = String(n + 1);
-      });
+    function stepUp() {
+      if (!inp) return;
+      var n = parseInt(inp.value, 10);
+      if (!isFinite(n)) n = min;
+      inp.value = String(n + 1);
     }
+    function bindHold(btn, stepFn) {
+      var holdDelay = null;
+      var repeatIv = null;
+      var touchAt = 0;
+      function endHold() {
+        clearTimeout(holdDelay);
+        clearInterval(repeatIv);
+        holdDelay = null;
+        repeatIv = null;
+      }
+      btn.addEventListener("mousedown", function (e) {
+        if (e.button !== 0) return;
+        stepFn();
+        holdDelay = window.setTimeout(function () {
+          repeatIv = window.setInterval(stepFn, 95);
+        }, 400);
+      });
+      btn.addEventListener("mouseup", endHold);
+      btn.addEventListener("mouseleave", endHold);
+      btn.addEventListener("touchstart", function () {
+        touchAt = Date.now();
+        stepFn();
+        endHold();
+        holdDelay = window.setTimeout(function () {
+          repeatIv = window.setInterval(stepFn, 95);
+        }, 400);
+      });
+      btn.addEventListener("touchend", endHold);
+      btn.addEventListener("touchcancel", endHold);
+      btn.addEventListener(
+        "click",
+        function (e) {
+          if (Date.now() - touchAt < 700) {
+            e.preventDefault();
+          }
+        },
+        true
+      );
+    }
+    if (minus && inp) bindHold(minus, stepDown);
+    if (plus && inp) bindHold(plus, stepUp);
     if (inp) {
       inp.addEventListener("blur", clamp);
       inp.addEventListener("change", clamp);
