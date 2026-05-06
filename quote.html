@@ -48,16 +48,20 @@
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
         <a href="quote.html">Get a quote</a>
-        <a href="index.html#services" class="nav-mobile-services-toggle" aria-expanded="false">Services</a>
-        <a href="labels.html" class="nav-mobile-services">Labels</a>
-        <a href="stickers.html" class="nav-mobile-services">Stickers</a>
-        <a href="banners.html" class="nav-mobile-services">Banners</a>
-        <a href="packaging.html" class="nav-mobile-services">Packaging</a>
-        <a href="index.html#top">Home</a>
-        <a href="index.html#why">Why us</a>
-        <a href="index.html#portfolio">Portfolio</a>
-        <a href="index.html#deals">Deals</a>
-        <a href="index.html#faq">FAQ</a>
+        <button type="button" class="nav-mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-nav-services">
+          <span>Services</span>
+          <span class="nav-mobile-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div id="mobile-nav-services" class="nav-mobile-submenu" hidden>
+          <a href="labels.html">Labels</a>
+          <a href="stickers.html">Stickers</a>
+          <a href="banners.html">Banners</a>
+          <a href="packaging.html">Packaging</a>
+        </div>
+        <a class="nav-anchor" href="index.html#why">Why us</a>
+        <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
+        <a class="nav-anchor" href="index.html#deals">Deals</a>
+        <a class="nav-anchor" href="index.html#faq">FAQ</a>
         <a class="nav-anchor" href="contact.html">Contact</a>
       </nav>
     </header>
@@ -100,7 +104,7 @@
                   <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                 </svg>
               </div>
-              <h3>Approve proof</h3>
+              <h3>Approved</h3>
               <p>We’ll send you a proof — you review, we revise if needed.</p>
             </div>
             <div class="step">
@@ -125,8 +129,8 @@
                   <circle cx="18.5" cy="18.5" r="2.5" />
                 </svg>
               </div>
-              <h3>Pickup or delivery</h3>
-              <p>Local pickup or ship to your door.</p>
+              <h3>Final delivery</h3>
+              <p>When your order is complete, we’ll notify you that it’s ready for delivery.</p>
             </div>
           </div>
         </div>

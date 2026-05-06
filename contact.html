@@ -48,12 +48,16 @@
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
         <a href="quote.html">Get a quote</a>
-        <a href="index.html#services" class="nav-mobile-services-toggle" aria-expanded="false">Services</a>
-        <a href="labels.html" class="nav-mobile-services">Labels</a>
-        <a href="stickers.html" class="nav-mobile-services">Stickers</a>
-        <a href="banners.html" class="nav-mobile-services">Banners</a>
-        <a href="packaging.html" class="nav-mobile-services">Packaging</a>
-        <a class="nav-anchor" href="index.html#top">Home</a>
+        <button type="button" class="nav-mobile-accordion-trigger" aria-expanded="false" aria-controls="mobile-nav-services">
+          <span>Services</span>
+          <span class="nav-mobile-chevron" aria-hidden="true">▾</span>
+        </button>
+        <div id="mobile-nav-services" class="nav-mobile-submenu" hidden>
+          <a href="labels.html">Labels</a>
+          <a href="stickers.html">Stickers</a>
+          <a href="banners.html">Banners</a>
+          <a href="packaging.html">Packaging</a>
+        </div>
         <a class="nav-anchor" href="index.html#why">Why us</a>
         <a class="nav-anchor" href="index.html#portfolio">Portfolio</a>
         <a class="nav-anchor" href="index.html#deals">Deals</a>
