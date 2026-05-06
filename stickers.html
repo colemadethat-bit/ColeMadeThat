@@ -45,7 +45,7 @@
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
         <a href="quote.html">Get a quote</a>
-        <a href="index.html#services">Services</a>
+        <a href="index.html#services" class="nav-mobile-services-toggle" aria-expanded="false">Services</a>
         <a href="labels.html" class="nav-mobile-services">Labels</a>
         <a href="stickers.html" class="nav-mobile-services">Stickers</a>
         <a href="banners.html" class="nav-mobile-services">Banners</a>
@@ -60,52 +60,32 @@
     </header>
 
     <main>
-      <section class="bg-surface shop-page shop-page-tight">
+      <section class="service-hero-video">
+        <video class="service-hero-video-bg" autoplay muted loop playsinline preload="metadata" poster="images/stickers-hero.jpg">
+          <source src="images/stickers-hero.mp4" type="video/mp4" />
+        </video>
         <div class="container">
-          <p class="shop-breadcrumb"><a href="index.html">Home</a> · <a href="index.html#services">Services</a> · Stickers</p>
-
-          <div class="shop-hero">
-            <div class="shop-hero-text">
-              <h1 class="shop-h1">Stickers</h1>
-              <p class="shop-bio">
-                Die-cut stickers that hold up indoors or out — promo handouts, logo decals, and product seals on vinyl with
-                gloss or matte finish. Clean contour cuts, crisp color, and proofs before we print.
-              </p>
-            </div>
-            <div class="shop-hero-img">
-              <img src="images/stickers-hero.jpg" alt="" width="640" height="360" loading="eager" onerror="this.style.display='none'; this.parentElement.classList.add('shop-hero-img--empty')" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-white" style="padding: 2.5rem 0">
-        <div class="container">
-          <p class="section-label">— <span class="accent-word">Portfolio</span></p>
-          <header class="section-header">
-            <h2 class="services-headline">Sticker samples</h2>
-            <p class="lead">Add <code>images/stickers-port-1.jpg</code> … <code>stickers-port-3.jpg</code>.</p>
-          </header>
-          <div class="service-showcase-grid">
-            <img src="images/stickers-port-1.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-            <img src="images/stickers-port-2.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-            <img src="images/stickers-port-3.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
+          <div class="service-hero-content">
+            <p class="shop-breadcrumb"><a href="index.html">Home</a> · <a href="index.html#services">Services</a> · Stickers</p>
+            <h1>Custom stickers</h1>
+            <p class="lead">Printed stickers with vibrant colors that last. Weatherproof, scratch resistant, and ready to go.</p>
+            <p class="lead">Your brand everywhere it has to be.</p>
+            <a class="btn btn-primary" href="quote.html?product=stickers">Get a quote</a>
           </div>
         </div>
       </section>
 
       <section class="bg-surface" style="padding: 2.5rem 0">
         <div class="container">
-          <p class="section-label">— <span class="accent-word">Your photos</span></p>
-          <header class="section-header">
-            <h2 class="services-headline">Image slots</h2>
-            <p class="lead">Reserve space for lifestyle or macro shots of your stickers.</p>
-          </header>
-          <div class="service-slot-grid">
-            <div class="service-slot">Slot 1 · add image</div>
-            <div class="service-slot">Slot 2 · add image</div>
-            <div class="service-slot">Slot 3 · add image</div>
-            <div class="service-slot">Slot 4 · add image</div>
+          <p class="section-label service-more-head">— <span class="accent-word">Gallery</span></p>
+          <h2 class="services-headline service-more-head">Examples</h2>
+          <div class="service-showcase-grid">
+            <img src="images/stickers-more-1.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
+            <img src="images/stickers-more-2.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
+            <img src="images/stickers-more-3.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
+          </div>
+          <div class="btn-row" style="justify-content: center; margin-top: 2rem">
+            <a class="btn btn-primary" href="quote.html?product=stickers">Get a quote for stickers</a>
           </div>
         </div>
       </section>
@@ -120,21 +100,6 @@
               sharp on every piece. Vinyl holds color and stands up to handling — matte for a soft look, gloss when you want
               extra pop.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-surface" style="padding: 2.5rem 0">
-        <div class="container">
-          <p class="section-label service-more-head">— <span class="accent-word">Gallery</span></p>
-          <h2 class="services-headline service-more-head">More examples</h2>
-          <div class="service-showcase-grid">
-            <img src="images/stickers-more-1.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-            <img src="images/stickers-more-2.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-            <img src="images/stickers-more-3.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-          </div>
-          <div class="btn-row" style="justify-content: center; margin-top: 2rem">
-            <a class="btn btn-primary" href="quote.html?product=stickers">Get a quote for stickers</a>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@
   var panelBan = document.getElementById("panel-banners");
   var panelPack = document.getElementById("panel-packaging");
   var qtyLabel = document.getElementById("q-sheet-qty-label");
+  var stickerTypeWrap = document.getElementById("q-sticker-type-wrap");
   var product = "labels";
 
   function togglePanelFields(panel, enabled) {
@@ -37,6 +38,7 @@
       if (p === "stickers") qtyLabel.textContent = "Quantity (stickers)";
       else qtyLabel.textContent = "Quantity (labels)";
     }
+    if (stickerTypeWrap) stickerTypeWrap.classList.toggle("field-hidden", p !== "stickers");
     syncDisabledInputs();
   }
 

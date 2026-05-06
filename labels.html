@@ -45,7 +45,7 @@
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
         <a href="quote.html">Get a quote</a>
-        <a href="index.html#services">Services</a>
+        <a href="index.html#services" class="nav-mobile-services-toggle" aria-expanded="false">Services</a>
         <a href="labels.html" class="nav-mobile-services">Labels</a>
         <a href="stickers.html" class="nav-mobile-services">Stickers</a>
         <a href="banners.html" class="nav-mobile-services">Banners</a>
@@ -60,53 +60,32 @@
     </header>
 
     <main>
-      <section class="bg-surface shop-page shop-page-tight">
+      <section class="labels-hero-video">
+        <video class="labels-hero-video-bg" autoplay muted loop playsinline preload="metadata" poster="images/labels-hero.jpg">
+          <source src="images/labels-hero.mp4" type="video/mp4" />
+        </video>
         <div class="container">
-          <p class="shop-breadcrumb"><a href="index.html">Home</a> · <a href="index.html#services">Services</a> · Labels</p>
-
-          <div class="shop-hero">
-            <div class="shop-hero-text">
-              <h1 class="shop-h1">Labels</h1>
-              <p class="shop-bio">
-                Premium label printing with highly detailed color and clean edges. We create labels that keep your brand
-                looking its best on jars, bottles, boxes, and retail shelves — waterproof vinyl, gloss or matte finish, and
-                sizing matched to your layout.
-              </p>
-            </div>
-            <div class="shop-hero-img">
-              <img src="images/labels-hero.jpg" alt="" width="640" height="360" loading="eager" onerror="this.style.display='none'; this.parentElement.classList.add('shop-hero-img--empty')" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-white" style="padding: 2.5rem 0">
-        <div class="container">
-          <p class="section-label">— <span class="accent-word">Portfolio</span></p>
-          <header class="section-header">
-            <h2 class="services-headline">Recent label work</h2>
-            <p class="lead">Swap in your photography — drop files into <code>images/labels-port-1.jpg</code> … <code>labels-port-3.jpg</code>.</p>
-          </header>
-          <div class="service-showcase-grid">
-            <img src="images/labels-port-1.jpg" alt="Label sample 1" loading="lazy" onerror="this.style.opacity='0.35'; this.alt='Add labels-port-1.jpg'" />
-            <img src="images/labels-port-2.jpg" alt="Label sample 2" loading="lazy" onerror="this.style.opacity='0.35'; this.alt='Add labels-port-2.jpg'" />
-            <img src="images/labels-port-3.jpg" alt="Label sample 3" loading="lazy" onerror="this.style.opacity='0.35'; this.alt='Add labels-port-3.jpg'" />
+          <div class="labels-hero-content">
+            <p class="shop-breadcrumb"><a href="index.html">Home</a> · <a href="index.html#services">Services</a> · Labels</p>
+            <h1>Custom labels</h1>
+            <p class="lead">Printed labels with vibrant colors that last. Weatherproof, scratch resistant, and ready to go.</p>
+            <p class="lead">Your brand everywhere it has to be.</p>
+            <a class="btn btn-primary" href="quote.html?product=labels">Get a quote</a>
           </div>
         </div>
       </section>
 
       <section class="bg-surface" style="padding: 2.5rem 0">
         <div class="container">
-          <p class="section-label">— <span class="accent-word">Your photos</span></p>
-          <header class="section-header">
-            <h2 class="services-headline">Image slots</h2>
-            <p class="lead">Placeholder grid for campaign or product shots — replace by assigning images to these cells in CSS or HTML.</p>
-          </header>
-          <div class="service-slot-grid">
-            <div class="service-slot">Slot 1 · add image</div>
-            <div class="service-slot">Slot 2 · add image</div>
-            <div class="service-slot">Slot 3 · add image</div>
-            <div class="service-slot">Slot 4 · add image</div>
+          <p class="section-label service-more-head">— <span class="accent-word">Gallery</span></p>
+          <h2 class="services-headline service-more-head">Examples</h2>
+          <div class="service-showcase-grid">
+            <img src="images/labels-more-1.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
+            <img src="images/labels-more-2.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
+            <img src="images/labels-more-3.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
+          </div>
+          <div class="btn-row" style="justify-content: center; margin-top: 2rem">
+            <a class="btn btn-primary" href="quote.html?product=labels">Get a quote for labels</a>
           </div>
         </div>
       </section>
@@ -125,21 +104,6 @@
               From contour cuts to classic rectangles and circles, we keep finishes consistent and registration tight so your
               artwork reads clean at any size.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-surface" style="padding: 2.5rem 0">
-        <div class="container">
-          <p class="section-label service-more-head">— <span class="accent-word">Gallery</span></p>
-          <h2 class="services-headline service-more-head">More examples</h2>
-          <div class="service-showcase-grid">
-            <img src="images/labels-more-1.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-            <img src="images/labels-more-2.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-            <img src="images/labels-more-3.jpg" alt="" loading="lazy" onerror="this.style.opacity='0.35'" />
-          </div>
-          <div class="btn-row" style="justify-content: center; margin-top: 2rem">
-            <a class="btn btn-primary" href="quote.html?product=labels">Get a quote for labels</a>
           </div>
         </div>
       </section>

@@ -48,7 +48,7 @@
       </div>
       <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
         <a href="quote.html">Get a quote</a>
-        <a href="index.html#services">Services</a>
+        <a href="index.html#services" class="nav-mobile-services-toggle" aria-expanded="false">Services</a>
         <a href="labels.html" class="nav-mobile-services">Labels</a>
         <a href="stickers.html" class="nav-mobile-services">Stickers</a>
         <a href="banners.html" class="nav-mobile-services">Banners</a>
@@ -267,6 +267,14 @@
                       <button type="button" class="finish-card" data-finish="matte" aria-pressed="false">Matte</button>
                     </div>
                     <input type="hidden" name="sheet_finish" id="q-finish-value" value="gloss" />
+                  </div>
+
+                  <div class="shop-field field-hidden" id="q-sticker-type-wrap">
+                    <label for="q-sticker-type">Sticker style</label>
+                    <select id="q-sticker-type" name="sticker_style">
+                      <option value="Die cut">Die cut</option>
+                      <option value="Sheet">Sheet</option>
+                    </select>
                   </div>
 
                   <div class="shop-field shop-field-inline">

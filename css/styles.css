@@ -352,6 +352,25 @@ a:hover {
   background: transparent;
 }
 
+.nav-mobile-services-toggle::after {
+  content: "▾";
+  float: right;
+  opacity: 0.8;
+}
+
+.nav-dropdown > a::after,
+.nav-dropdown > .nav-anchor::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.45rem;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid rgba(255, 255, 255, 0.75);
+  transform: translateY(1px);
+}
+
 @media (min-width: 900px) {
   .nav-desktop {
     display: flex;
@@ -2980,8 +2999,8 @@ section.bg-white#services {
 
 .home-cat-tile .home-cat-img {
   width: 100%;
-  aspect-ratio: 2.4 / 1;
-  max-height: 64px;
+  aspect-ratio: 1.6 / 1;
+  max-height: 120px;
   min-height: 0;
   background: linear-gradient(145deg, #f3f4f6, #e5e7eb);
   overflow: hidden;
@@ -2995,9 +3014,10 @@ section.bg-white#services {
 }
 
 .home-cat-tile .home-cat-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 50%;
+  height: 175%;
+  object-fit: contain;
+  margin: 0 auto;
   display: block;
 }
 
@@ -3075,7 +3095,8 @@ section.bg-white#services {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  max-width: 220px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .qty-stepper button {
@@ -3738,26 +3759,14 @@ section.bg-white#services {
 }
 
 .footer-dropdown-label::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid rgba(255, 255, 255, 0.45);
-  margin-top: 2px;
-}
-
-@media (max-width: 899px) {
-  .footer-dropdown-label::after {
-    display: none;
-  }
+  content: none;
 }
 
 .footer-dropdown-menu {
-  margin: 0.35rem 0 0;
-  padding: 0.35rem 0;
+  margin: 0.15rem 0 0;
+  padding: 0.1rem 0 0;
   list-style: none;
-  min-width: 11rem;
+  min-width: 0;
 }
 
 .footer-dropdown-menu a {
@@ -3774,55 +3783,81 @@ section.bg-white#services {
 }
 
 @media (min-width: 900px) {
-  .footer-dropdown {
-    padding-top: 0.25rem;
-  }
-
   .footer-dropdown-menu {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    margin: 0 0 0.35rem;
-    padding: 0.4rem 0;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: 0 -10px 32px rgba(0, 0, 0, 0.45);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(6px);
-    transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
-    z-index: 400;
+    position: static;
+    margin: 0.15rem 0 0;
+    padding: 0.1rem 0 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
 
   .footer-dropdown-menu li:first-child a {
-    padding-top: 0.45rem;
+    padding-top: 0.35rem;
   }
 
   .footer-dropdown-menu li:last-child a {
-    padding-bottom: 0.45rem;
+    padding-bottom: 0.35rem;
   }
 
   .footer-dropdown-menu a {
-    padding: 0.45rem 1rem;
+    padding: 0.35rem 0;
   }
+}
 
-  .footer-dropdown:hover .footer-dropdown-menu,
-  .footer-dropdown:focus-within .footer-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+/* Service page hero (labels/stickers/banners/packaging) */
+.service-hero-video,
+.labels-hero-video {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0f1115;
+}
 
-  /* Static labels on desktop: list hidden until hover — extra bridge */
-  .footer-dropdown::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 100%;
-    height: 0.75rem;
-  }
+.service-hero-video-bg,
+.labels-hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.service-hero-video::before,
+.labels-hero-video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(95deg, rgba(8, 10, 12, 0.88) 0%, rgba(8, 10, 12, 0.58) 45%, rgba(8, 10, 12, 0.38) 100%);
+  z-index: 1;
+}
+
+.service-hero-content,
+.labels-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 36rem;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.service-hero-content h1,
+.labels-hero-content h1 {
+  text-transform: none;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+
+.service-hero-content .lead,
+.labels-hero-content .lead {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-v4-contact-card h3 {

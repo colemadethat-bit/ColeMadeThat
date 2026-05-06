@@ -8,9 +8,27 @@
     });
     mobile.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
+        if (link.classList.contains("nav-mobile-services-toggle")) return;
         mobile.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
       });
+    });
+  }
+
+  var mobileServicesToggle = document.querySelector(".nav-mobile-services-toggle");
+  if (mobileServicesToggle && mobile) {
+    var serviceLinks = Array.prototype.slice.call(mobile.querySelectorAll(".nav-mobile-services"));
+    function syncMobileServices(open) {
+      mobileServicesToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      serviceLinks.forEach(function (link) {
+        link.style.display = open ? "block" : "none";
+      });
+    }
+    syncMobileServices(false);
+    mobileServicesToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      var open = mobileServicesToggle.getAttribute("aria-expanded") !== "true";
+      syncMobileServices(open);
     });
   }
 
