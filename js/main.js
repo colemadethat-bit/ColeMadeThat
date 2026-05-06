@@ -8,7 +8,7 @@
       btn.setAttribute("aria-expanded", "false");
       var panelId = btn.getAttribute("aria-controls");
       var panel = panelId && document.getElementById(panelId);
-      if (panel) panel.hidden = true;
+      if (panel) panel.classList.add("is-collapsed");
     });
   }
 
@@ -16,6 +16,7 @@
     if (!mobile || !toggle) return;
     mobile.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
+    mobile.setAttribute("aria-hidden", "true");
     document.body.classList.remove("nav-open");
     collapseMobileAccordions();
   }
@@ -24,6 +25,7 @@
     toggle.addEventListener("click", function () {
       var open = mobile.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      mobile.setAttribute("aria-hidden", open ? "false" : "true");
       document.body.classList.toggle("nav-open", open);
       if (!open) collapseMobileAccordions();
     });
@@ -37,13 +39,15 @@
 
   if (mobile) {
     mobile.querySelectorAll(".nav-mobile-accordion-trigger").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var panelId = btn.getAttribute("aria-controls");
-        var panel = panelId && document.getElementById(panelId);
+      var panelId = btn.getAttribute("aria-controls");
+      var panel = panelId && document.getElementById(panelId);
+      if (panel) panel.classList.add("is-collapsed");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
         if (!panel) return;
         var open = btn.getAttribute("aria-expanded") === "true";
         btn.setAttribute("aria-expanded", open ? "false" : "true");
-        panel.hidden = open;
+        panel.classList.toggle("is-collapsed", open);
       });
     });
   }
