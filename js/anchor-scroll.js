@@ -15,9 +15,14 @@
 
   function syncHeaderHeightVar() {
     var h = document.querySelector(".site-header");
-    if (h) {
-      document.documentElement.style.setProperty("--header-h", Math.round(h.getBoundingClientRect().height) + "px");
+    if (!h) return;
+    var raw = Math.round(h.getBoundingClientRect().height);
+    if (typeof window.matchMedia === "function" && window.matchMedia("(max-width: 899px)").matches) {
+      raw = Math.min(Math.max(raw, 52), 96);
+    } else {
+      raw = Math.min(Math.max(raw, 56), 120);
     }
+    document.documentElement.style.setProperty("--header-h", raw + "px");
   }
 
   syncHeaderHeightVar();

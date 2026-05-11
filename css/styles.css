@@ -111,7 +111,6 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  min-height: var(--header-h);
   display: flex;
   align-items: center;
   background: rgba(9, 9, 11, 0.92);
@@ -156,6 +155,23 @@ a:hover {
 @media (max-width: 899px) {
   .site-header {
     z-index: 10060;
+    min-height: 0;
+  }
+
+  /* Flex row avoids odd grid sizing when the desktop nav is display:none (mobile Safari / Chrome). */
+  .site-header .container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-block: 0.5rem;
+  }
+
+  .site-header .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: 0.25rem;
   }
 
   .site-header .nav-desktop,
@@ -163,10 +179,20 @@ a:hover {
     display: none !important;
   }
 
+  .site-header .header-actions {
+    flex: 0 0 auto;
+    margin-right: 0;
+  }
+
   .menu-toggle {
     position: relative;
     z-index: 10061;
   }
+}
+
+html.nav-open,
+body.nav-open {
+  overflow: hidden;
 }
 
 .logo {
@@ -369,10 +395,6 @@ a:hover {
   }
 }
 
-body.nav-open {
-  overflow: hidden;
-}
-
 .nav-mobile a {
   padding: 0.85rem 0;
   font-size: 1rem;
@@ -568,6 +590,18 @@ h3 {
 .btn-ghost:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* Ghost buttons on white sections (e.g. “What we print”) — default ghost uses light theme text. */
+.bg-white .btn-ghost {
+  color: #111827;
+  border-color: rgba(17, 24, 39, 0.22);
+}
+
+.bg-white .btn-ghost:hover {
+  color: #b45309;
+  border-color: var(--accent);
+  background: rgba(255, 136, 0, 0.1);
 }
 
 .btn-dark {
@@ -1916,11 +1950,19 @@ section.bg-white#services {
   margin-top: 0.12rem;
 }
 
+.faq-aside-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
 .faq-aside .link-quote {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1.25rem;
+  margin-top: 0;
   padding: 0.75rem 1.35rem;
   font-weight: 700;
   font-size: 0.82rem;
@@ -1935,6 +1977,28 @@ section.bg-white#services {
 .faq-aside .link-quote:hover {
   background: var(--accent-hover);
   color: var(--black) !important;
+}
+
+.faq-aside .link-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  padding: 0.75rem 1.35rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: transparent;
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 10px;
+  font-family: var(--font-display);
+}
+
+.faq-aside .link-contact:hover {
+  border-color: var(--accent);
+  color: var(--accent) !important;
 }
 
 .faq-aside .lead {
